@@ -26,7 +26,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10 ease-in duration-300 text-white antialiased">
+    <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10 ease-in duration-300 antialiased">
       <div className="h-5 bg-oculos-aqua"></div>
       <div className="max-w-4xl m-auto flex justify-between items-top">
         <Link href="/" passHref>
@@ -138,28 +138,28 @@ export default function Nav() {
         <nav
           className={`absolute top-0 ${
             nav ? "left-0" : "left-full"
-          } right-0 bottom-0 flex justify-center items-center w-full h-screen min-[910px]:hidden bg-oculos-200 text-center ease-in duration-300`}
+          } right-0 bottom-0 flex justify-center items-center w-full h-screen min-[910px]:hidden bg-oculos-lightsage text-center ease-in duration-300`}
         >
           <ul className="text-xl">
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/om-oss">Om oss</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/tjenester">Tjenester</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/kunder">Kunder</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/inspirasjon">Inspirasjon</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/karriere">Karriere</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/eventer">Eventer</Link>
             </li>
-            <li onClick={handleNav} className="p-4 hover:text-gray-500 duration-300">
+            <li onClick={handleNav} className="p-4 hover:text-oculos-aqua duration-300">
               <Link href="/kontakt">Kontakt oss</Link>
             </li>
           </ul>

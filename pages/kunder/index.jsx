@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../../components/layout/layout";
+import Hero from "../../components/layout/hero";
 
 const clientsPage = () => {
   const clients = [
@@ -9,7 +9,8 @@ const clientsPage = () => {
 
   console.log(clients.name);
   return (
-    <Layout>
+    <>
+      <Hero heading="Kunder" message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon" />
       <h1>Kunder</h1>
       <ul>
         {clients.map((client) => (
@@ -25,7 +26,7 @@ const clientsPage = () => {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 }
 

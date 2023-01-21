@@ -15,7 +15,7 @@ function EventSearch(props) {
   }
 
   return (
-    <form className="text-base flex flex-col sm:flex-row justify-between items-center p-4 antialiased bg-oculos-200 mx-5 lg:mx-auto max-w-4xl" onSubmit={submitHandler} >
+    <form className="text-base flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 antialiased bg-oculos-harmony max-w-[960px] mx-auto" onSubmit={submitHandler} >
       <div className="flex flex-col sm:flex-row justify-between sm:w-[70%]">
         <div className="flex justify-between items-center">
           <label htmlFor="year" className="mr-3 font-bold">Årstall</label>
@@ -42,7 +42,7 @@ function EventSearch(props) {
           </select>
         </div>
       </div>
-      <button className="group/btn flex items-center box-border px-6 py-2 border-2 border-oculos-100 bg-oculos-100 antialiased hover:bg-oculos-200 ease-linear duration-300 relative">
+      <button className="group/btn w-fit flex items-center box-border px-6 py-2 border-2 border-oculos-lightsage bg-oculos-lightsage antialiased hover:bg-oculos-harmony ease-linear duration-300 relative">
             <p className="text-base group/name group-hover/btn:ml-[-10px] group-hover/btn:px-[5px] ease-linear duration-150">Search Events</p><FaArrowRight size="15" className="absolute mt-[1px] right-3 group/arrow opacity-0 group-hover/btn:opacity-100 group-hover/btn:right-2 ease-linear duration-150" /></button>
     </form>
   );

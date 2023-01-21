@@ -1,8 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
 
-export default function Hero({heading, message}) {
+export default function Hero({image, heading, message}) {
   return (
-    <header className="flex items-center h-screen mb-10 bg-fixed bg-center bg-cover bg-[url('../public/sommer03.jpg')]">
+    <header className="flex items-center h-screen bg-fixed bg-center bg-cover bg-[url('../public/sommer03.jpg')]">
       {/* Overlay */}
       <div className="absolute top-0 w-[100%] h-screen bg-black/40 z-[2]" />
       <div className="text-white z-[2] mt-[-5rem] mx-5 lg:mx-auto max-w-4xl">

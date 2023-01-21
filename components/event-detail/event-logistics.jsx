@@ -1,10 +1,8 @@
-import AddressIcon from '../icons/address-icon';
-import DateIcon from '../icons/date-icon';
-import LogisticsItem from './logistics-item';
+import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import classes from './event-logistics.module.css';
 
 function EventLogistics(props) {
-  const { date, address, image, imageAlt } = props;
+  const { date, time, address, image, imageAlt } = props;
 
   const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
@@ -19,12 +17,13 @@ function EventLogistics(props) {
         <img src={`/${image}`} alt={imageAlt} />
       </div>
       <ul className={classes.list}>
-        <LogisticsItem icon={DateIcon}>
+      <FaCalendar size="15" className="flex self-center mr-2" />
           <time>{humanReadableDate}</time>
-        </LogisticsItem>
-        <LogisticsItem icon={AddressIcon}>
+          <FaClock size="15" className="flex self-center mx-2" />
+            <time className="text-base">{time}</time>
+            <FaMapMarkerAlt size="15" className="flex self-center mr-2" />
           <address>{addressText}</address>
-        </LogisticsItem>
+        
       </ul>
     </section>
   );

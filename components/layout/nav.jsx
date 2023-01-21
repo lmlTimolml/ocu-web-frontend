@@ -28,7 +28,7 @@ export default function Nav() {
   return (
     <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10 ease-in duration-300 antialiased">
       <div className="h-5 bg-oculos-aqua"></div>
-      <div className="max-w-4xl m-auto flex justify-between items-top">
+      <div className="max-w-[960px] mx-auto flex justify-between items-top">
         <Link href="/" passHref>
           {/* esLint-disable @next/next/no-img-element */}
           <img

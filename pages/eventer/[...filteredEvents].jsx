@@ -3,6 +3,7 @@ import { getFilteredEvents } from "../../dummy-data";
 import EventSearch from "../../components/events/event-search";
 import EventList from "../../components/events/event-list";
 import Layout from "../../components/layout/layout";
+import Hero from "../../components/layout/hero";
 
 const FilteredEventsPage = () => {
   const router = useRouter();
@@ -34,10 +35,11 @@ const FilteredEventsPage = () => {
 
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
-      <Layout>
+      <>
+      <Hero heading="Beklager" message="Ingen arrangementer for valgt tidsrom" />
         <EventSearch onSearch={findEventsHandler} />
         <p className="center">No events found for the selected dates</p>
-      </Layout>
+      </>
     );
   }
 
@@ -47,10 +49,11 @@ const FilteredEventsPage = () => {
   }
 
   return (
-    <Layout>
+    <>
+    <Hero heading="Arrangementer" message="for valgte datoer" />
       <EventSearch onSearch={findEventsHandler} />
       <EventList items={filteredEvents} />
-    </Layout>
+    </>
   );
 };
 

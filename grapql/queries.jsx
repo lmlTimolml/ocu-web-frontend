@@ -6,6 +6,15 @@ const GET_ALL_SLUGS = gql`
       data {
         attributes {
           slug
+          title
+          content
+          cover {
+            data {
+            	attributes {
+                url
+              }
+            }
+          }
         }
       }
     }
@@ -20,6 +29,13 @@ const GET_ALL_POSTS = gql`
           title
           description
           slug
+          cover {
+            data {
+            	attributes {
+                url
+              }
+            }
+          }
         }
       }
     }

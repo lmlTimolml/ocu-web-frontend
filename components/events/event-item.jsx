@@ -1,9 +1,5 @@
-import {
-  FaCalendar,
-  FaMapMarkerAlt,
-  FaClock,
-} from "react-icons/fa";
-import Button from "../ui/button";
+import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import Button from "../ui/event-button";
 
 function EventItem(props) {
   const { title, image, date, time, location, id } = props;
@@ -13,14 +9,15 @@ function EventItem(props) {
     year: "numeric",
   });
   const formattedAddress = location.replace(", ", "\n");
-  const exploreLink = `/events/${id}`;
+  const eventLink = `/eventer/${id}`;
+
   return (
     <li className="grid gap-x-4 gap-y-0 grid-cols-1 sm:grid-cols-3 mt-4 bg-transparent antialiased">
       <div className="aspect-square h-[100%]">
         <img src={"/" + image} alt={title} />
       </div>
-      <div className="p-5 sm:col-start-2 sm:col-span-2 bg-oculos-200">
-        <div className="">
+      <div className="flex flex-col justify-between p-5 sm:col-start-2 sm:col-span-2 bg-oculos-harmony">
+        <div className="flex flex-col justify-start">
           <h2 className="font-bold text-lg mb-5">{title}</h2>
           <div className="flex mb-3">
             <FaCalendar size="15" className="flex self-center mr-2" />
@@ -33,7 +30,8 @@ function EventItem(props) {
             <address className="text-base">{formattedAddress}</address>
           </div>
         </div>
-          <Button link={exploreLink}>Explore Event</Button>
+
+        <Button link={eventLink}>Explore Event</Button>
       </div>
     </li>
   );

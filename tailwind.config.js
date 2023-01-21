@@ -13,9 +13,17 @@ module.exports = {
           aqua: '#01A1B1',
           oip: '#BBDDE6',
           peppa:'#E4D5D3',
+          palemagenta:'#AB5099',
         },
-      }
+      },
+      content: {
+        'arrowwhite': 'url("/icons/arrow-w.svg")',
+        'arrowblack': 'url("/icons/arrow-b.svg")',
+      },
     },
+    listStyleType: {
+      square: 'square',
+    }
   },
   plugins: [],
 }

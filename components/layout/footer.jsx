@@ -3,7 +3,7 @@ import { FaInstagramSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="mx-5 lg:mx-auto py-[20px] text-base antialiased max-w-4xl">
+    <footer className="mx-auto py-[20px] text-base antialiased max-w-[960px] bg-oculos-lightsage">
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
         <div className="flex flex-col border-t pt-[20px] border-black">
           <Link href="/" className="font-bold">

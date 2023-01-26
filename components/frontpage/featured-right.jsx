@@ -1,22 +1,26 @@
-import Button from "../ui/featured-cta-button";
+import Button from "../ui/text-button";
 import Image from "next/image";
 
-export default function FeaturedRight(props) {
-  const { title, description, image, link, id } = props;
-
-  const ctaLink = `/inspirasjon/${id}`;
-
-  return (
-    <li className="flex flex-col antialiased p-3 md:p-5 bg-oculos-harmony">
-    
-        <div className="flex justify-between mb-7">
-          <h1 className="font-bold text-3xl mb-5 self-center">{title}</h1>
-          <Image src={"/" + image} alt={title} width={100} height={100} />
+export default function FeaturedRight({
+  title,
+  description,
+  image,
+  isFeatured,
+  link,
+  id,
+}) {
+  const eventLink = `/eventer/${id}`;
+  if (isFeatured); 
+    return (
+      <li className="flex antialiased content-center align-middle justify-between p-3 md:p-5 bg-oculos-harmony">
+        <div className="flex flex-col justify-between w-[58%]">
+          <h1 className="font-bold text-3xl mb-5">{title}</h1>
+          <p className="font-medium text-lg mb-10">{description}</p>
+          <Button link={eventLink}>{link = "Bli kjent med oss"}</Button>
         </div>
-        <div className="flex flex-col h-[100%] justify-between">
-        <p className="font-medium text-lg mb-10">{description}</p>
-        <Button link={ctaLink}>{link}</Button>
-      </div>
-    </li>
-  );
+          <div className="flex flex-col justify-center w-[38%] bg-oculos-oip overflow-hidden origin-center">
+            <Image src={"/" + image} alt={title} width={380} height={600}/>
+          </div>
+      </li>
+    );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagramSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -28,7 +28,7 @@ export default function Footer() {
               <FaInstagramSquare size="25" />
             </Link>
             <Link href="/" className="ml-2">
-              <FaFacebookSquare size="25" />
+              <FaFacebook size="25" />
             </Link>
             <Link href="/" className="ml-2">
               <FaLinkedin size="25" />

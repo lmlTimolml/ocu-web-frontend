@@ -1,9 +1,9 @@
-import classes from './event-content.module.css';
 
-function EventContent(props) {
+
+function EventContent({children}) {
   return (
-    <section className={classes.content}>
-      {props.children}
+    <section className="flex justify-center">
+      {children}
     </section>
   );
 }

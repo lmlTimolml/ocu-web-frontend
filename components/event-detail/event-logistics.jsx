@@ -1,8 +1,7 @@
 import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import classes from './event-logistics.module.css';
+import ModuleImgLftQtRgt from "../layout/module-imglft-qtrgt";
 
-function EventLogistics(props) {
-  const { date, time, address, image, imageAlt } = props;
+function EventLogistics({ date, time, address, image, imageAlt }) {
 
   const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
@@ -12,11 +11,13 @@ function EventLogistics(props) {
   const addressText = address.replace(', ', '\n');
 
   return (
-    <section className={classes.logistics}>
-      <div className={classes.image}>
+    <>
+      <ModuleImgLftQtRgt />
+    <section className="max-w-[960px] mx-auto mt-5">
+      <div className="flex">
         <img src={`/${image}`} alt={imageAlt} />
       </div>
-      <ul className={classes.list}>
+      <ul className="">
       <FaCalendar size="15" className="flex self-center mr-2" />
           <time>{humanReadableDate}</time>
           <FaClock size="15" className="flex self-center mx-2" />
@@ -26,6 +27,7 @@ function EventLogistics(props) {
         
       </ul>
     </section>
+    </>
   );
 }
 

@@ -1,7 +1,5 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from "../grapql/queries";
-import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote";
 
 const client = new ApolloClient({
   uri: "http://0.0.0.0:1337/graphql",

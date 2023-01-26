@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
 import { getEventById } from "../../dummy-data";
@@ -20,7 +19,6 @@ export default function EventDetailPage() {
   return (
     <>
     <Hero heading={event.title} message={event.description} />
-      <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
         address={event.location}

@@ -1,8 +1,7 @@
 import Button from "../ui/featured-cta-button";
 import Image from "next/image";
 
-export default function FeaturedArticle(props) {
-  const { title, description, image, link, id } = props;
+export default function FeaturedArticle({ title, description, image, link, id } ) {
 
   const ctaLink = `/inspirasjon/${id}`;
 
@@ -13,7 +12,7 @@ export default function FeaturedArticle(props) {
           <h1 className="font-bold text-3xl mb-5 self-center">{title}</h1>
           <Image src={"/" + image} alt={title} width={100} height={100} />
         </div>
-        <div className="flex flex-col h-[100%] justify-between">
+        <div className="flex flex-col h-full justify-between">
         <p className="font-medium text-lg mb-10">{description}</p>
         <Button link={ctaLink}>{link}</Button>
       </div>

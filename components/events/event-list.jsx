@@ -1,7 +1,7 @@
 import EventItem from "./event-item";
 
-export default function EventList(props) {
-  const { items } = props;
+export default function EventList({ items }) {
+  
   return (
     <ul className="max-w-[960px] mx-auto">
       {items.map((event) => (

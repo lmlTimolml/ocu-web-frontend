@@ -32,15 +32,15 @@ export default function Nav() {
         <Link href="/" passHref>
           {/* esLint-disable @next/next/no-img-element */}
           <img
-            className="my-5 ml-5 lg:mx-auto"
+            className="my-5 ml-5 lg:ml-0"
             src="/oculogo_neg.svg"
             width={200}
             height={34}
             alt="Home"
           />
         </Link>
-        <ul style={{color: `${txtColor}`}} className="hidden min-[910px]:flex">
-          <li className="p-4">
+        <ul style={{color: `${txtColor}`}} className="hidden min-[910px]:flex md:mr-5 lg:mr-0">
+          <li className="py-4 pl-4">
             <Link style={{color: `${txtColor}`}}
               href="/om-oss"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"
@@ -48,7 +48,7 @@ export default function Nav() {
               Om oss
             </Link>
           </li>
-          <li className="p-4 group/item relative">
+          <li className="py-4 pl-4 group/item relative">
             <Link
               href="/tjenester"
             >
@@ -83,7 +83,7 @@ export default function Nav() {
             </Link></li>
             </ul>
           </li>
-          <li className="p-4">
+          <li className="py-4 pl-4">
             <Link
               href="/kunder"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"
@@ -91,7 +91,7 @@ export default function Nav() {
               Kunder
             </Link>
           </li>
-          <li className="p-4">
+          <li className="py-4 pl-4">
             <Link
               href="/inspirasjon"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"
@@ -99,7 +99,7 @@ export default function Nav() {
               Inspirasjon
             </Link>
           </li>
-          <li className="p-4">
+          <li className="py-4 pl-4">
             <Link
               href="/karriere"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"
@@ -107,7 +107,7 @@ export default function Nav() {
               Karriere
             </Link>
           </li>
-          <li className="p-4">
+          <li className="py-4 pl-4">
             <Link
               href="/eventer"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"
@@ -115,7 +115,7 @@ export default function Nav() {
               Eventer
             </Link>
           </li>
-          <li className="p-4">
+          <li className="py-4 pl-4">
             <Link
               href="/kontakt"
               className="border-t-0 border-r-0 border-b-0 hover:border-b hover:pb-2 border-l-0 border-white duration-300"

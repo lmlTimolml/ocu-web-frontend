@@ -3,10 +3,9 @@ import { getAllServices } from "../../dummy-data";
 
 const service = getAllServices();
 
-export default function ServiceNav( { children } ) {
+export default function ServiceNav () {
     return (
   <>
-  {children}
     <ServiceListMain items={service} />
   </>
     );

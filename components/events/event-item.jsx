@@ -1,5 +1,6 @@
 import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Button from "../ui/event-button";
+import Image from "next/image";
 
 function EventItem(props) {
   const { title, image, date, time, location, id } = props;
@@ -14,7 +15,7 @@ function EventItem(props) {
   return (
     <li className="grid gap-x-4 gap-y-0 grid-cols-1 sm:grid-cols-3 mt-4 bg-transparent antialiased">
       <div className="aspect-square h-[100%]">
-        <img src={"/" + image} alt={title} />
+        <Image src={"/" + image} alt={title} width={1200} height={1200} />
       </div>
       <div className="flex flex-col justify-between p-5 sm:col-start-2 sm:col-span-2 bg-oculos-harmony">
         <div className="flex flex-col justify-start">

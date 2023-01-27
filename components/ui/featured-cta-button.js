@@ -5,7 +5,7 @@ function Button(props) {
     return (
       <Link
         href={props.link}
-        className="group/btn flex items-center box-border px-6 py-2 border-2 border-oculos-aqua bg-oculos-aqua antialiased hover:bg-white ease-linear duration-300 relative w-max"
+        className="group/btn flex items-center box-border px-6 py-2 rounded-[0.25rem] border border-oculos-aqua bg-oculos-aqua antialiased hover:bg-white ease-linear duration-300 relative w-max"
       >
         <p className="text-base text-white group/name group-hover/btn:ml-[-10px] group-hover/btn:px-[5px] group-hover/btn:text-oculos-aqua ease-linear duration-150">
           {props.children}

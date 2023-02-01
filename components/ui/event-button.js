@@ -12,7 +12,7 @@ function Button(props) {
         </p>
         <FaArrowRight
           size="15"
-          className="absolute mt-[1px] right-3 group/arrow opacity-0 group-hover/btn:opacity-100 group-hover/btn:right-2 ease-linear duration-150"
+          className="absolute mt-[1px] right-3 group/arrow opacity-0 group-hover/btn:opacity-100 group-hover/btn:right-2 ease-linear duration-300"
         />
       </Link>
     );

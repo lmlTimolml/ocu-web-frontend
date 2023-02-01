@@ -5,12 +5,12 @@ export default function ClientLogoList({ info }) {
 
     <ul className="grid gap-x-4 gap-y-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 bg-transparent antialiased max-w-[960px] mx-auto">
         
-        {info.map((image) => (
+        {info.map((logo) => (
             
         <ClientLogo
-        key={image.id}
-        alt={image.alt}
-        image={image.image} />
+        key={logo.id}
+        alt={logo.alt}
+        image={logo.image} />
         ))}
     </ul>
     

@@ -1,16 +1,16 @@
 import Hero from "../../components/layout/hero";
-import FeaturedList from "../../components/frontpage/featured-list";
-import { getAllArticles, getAllServices } from "../../dummy-data";
-import ServiceList from "../../components/services/service-list";
+import { career } from "../../dummy-data";
+import CareerGrid from "../../components/career/career-grid";
 
-const article = getAllArticles();
-const service = getAllServices();
+const careers = career();
 
 const careerPage = () => {
   return (
     <>
       <Hero heading="Karriere" message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon" />
-      <h1>Karriere</h1>
+      <section className="px-5 py-6 bg-oculos-piglet">
+      <CareerGrid info={careers} />
+      </section>
     </>
   );
 }

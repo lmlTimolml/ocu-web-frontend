@@ -177,29 +177,40 @@ const DUMMY_EVENTS = [
   
   /* STILLINGER */
 
-  export const jobs = [
+  const CAREER = [
     {
       id: 1,
-      title: "Sr. Python dev",
-      company: "Computing101",
-      location: "Somewhere",
-      langauge: "Norwegian"
+      title: "CRM rådgiver",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci nisl, volutpat sed urna a, pretium blandit lectus. Maecenas feugiat fringilla sagittis. Ut nec tortor in purus pharetra pharetra id vitae mauris. Aenean pulvinar ac sapien ac lacinia. Aenean pulvinar varius venenatis.",
+      image: `/images/coding-event.jpg`,
+      alt: "title?",
+      isFeatured: true,
+      link: "Les mer",
     },
     {
       id: 2,
-      title: "Sr. Snake dev",
-      company: "Computing102",
-      location: "Somewhere else",
-      langauge: "Swedish"
+      title: "CRM blodgiver",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci nisl, volutpat sed urna a, pretium blandit lectus. Maecenas feugiat fringilla sagittis. Ut nec tortor in purus pharetra pharetra id vitae mauris. Aenean pulvinar ac sapien ac lacinia. Aenean pulvinar varius venenatis.",
+      image: `/images/coding-event.jpg`,
+      alt: "title?",
+      isFeatured: true,
+      link: "Les mer",
     },
     {
       id: 3,
-      title: "Jr. Worms dev",
-      company: "Computing201",
-      location: "Somewhere completely remote",
-      langauge: "Unknown"
+      title: "CRM pådriver",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci nisl, volutpat sed urna a, pretium blandit lectus. Maecenas feugiat fringilla sagittis. Ut nec tortor in purus pharetra pharetra id vitae mauris. Aenean pulvinar ac sapien ac lacinia. Aenean pulvinar varius venenatis.",
+      image: `/images/coding-event.jpg`,
+      alt: "title?",
+      isFeatured: true,
+      link: "Les mer",
     },
   ]
+  export function career() {
+    return CAREER;
+  }
+
+
 
   /* EMPLOYEES */
 
@@ -505,7 +516,7 @@ const CLIENTS = [
   },
   {
     id: 3,
-    image: `/images/coding-event.jpg`,
+    image: "/images/coding-event.jpg",
     alt: "company name",
     title: "Kunde 3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci nisl, volutpat sed urna a, pretium blandit lectus. Maecenas feugiat fringilla sagittis. Ut nec tortor in purus pharetra pharetra id vitae mauris. Aenean pulvinar ac sapien ac lacinia. Aenean pulvinar varius venenatis. Suspendisse dignissim vel quam nec sollicitudin.",

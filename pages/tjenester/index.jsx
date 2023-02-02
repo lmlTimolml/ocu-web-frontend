@@ -26,14 +26,14 @@ export default function servicesPage() {
         <PlainText />
       </section>
 
-      <section className="md:px-0 px-5 py-6 flex flex-col md:gap-x-8 md:gap-y-4 md:grid md:grid-cols-[minmax(0px,_1fr)_minmax(120px,_463px)_minmax(120px,_463px)minmax(0px,_1fr)] antialiased mx-auto">
+      <section className="md:px-0 px-5 py-6 flex flex-col md:gap-x-8 md:gap-y-4 md:grid md:grid-cols-[minmax(0px,_1fr)_minmax(120px,_463px)_minmax(120px,_463px)minmax(0px,_1fr)] antialiased mx-auto relative">
         <div className="md:col-start-2 mb-4 md:mb-0">
           <BulletList
             title="Punktliste"
             bulletpoints="Lorem ipsum dolor sit amet, consetetur"
           />
         </div>
-        <div className="md:col-start-3 sm:col-span-2">
+        <div className="md:col-start-3 sm:col-span-2 relative">
           <ImageTwoCol />
         </div>
       </section>

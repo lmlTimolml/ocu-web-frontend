@@ -10,9 +10,8 @@ export default function FeaturedRight({
   id,
 }) {
   const eventLink = `/eventer/${id}`;
-  if (isFeatured); 
     return (
-      <li className="flex antialiased content-center align-middle justify-between p-3 md:p-5 bg-oculos-harmony">
+      <li key={id} className="flex antialiased content-center align-middle justify-between p-3 md:p-5 bg-oculos-harmony">
         <div className="flex flex-col justify-between w-[58%]">
           <h1 className="font-bold text-3xl mb-5">{title}</h1>
           <p className="font-medium text-lg mb-10">{description}</p>

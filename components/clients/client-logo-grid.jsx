@@ -10,7 +10,7 @@ export default function ClientLogoList({ info }) {
         <ClientLogo
         key={logo.id}
         alt={logo.alt}
-        image={logo.image} />
+        image={logo.image}/>
         ))}
     </ul>
     

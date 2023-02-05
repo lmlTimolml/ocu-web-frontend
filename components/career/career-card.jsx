@@ -10,9 +10,10 @@ export default function CareerCard({ id, title, description, image, alt, isFeatu
       <li
         key={id}
         className="group/main-parent flex flex-col h-full bg-oculos-peppa antialiased"
-      >
-        <Image src={image} height={300} width={300} alt={alt} className="flex-grow-0" />
-        <div className="p-4 flex flex-col justify-between flex-grow">
+      ><div className="relative aspect-video">
+        <Image src={image} fill style={{objectFit:"contain"}} alt={alt} />
+        </div>
+        <div className="p-4 flex flex-col justify-between">
         <h3 className="font-bold text-2xl sm:text-lg">{title}</h3><p>{description}</p>
         <button link={carrierLink} className="flex mt-4 relative">
           {link}

@@ -10,8 +10,9 @@ export default function EmployeeCard({ id, name, title, image, alt, isLeader, em
       <li
         key={id}
         className="group/main-parent flex flex-col h-full bg-oculos-harmony antialiased"
-      >
-        <Image src={image} height={300} width={300} alt={alt} className="flex-grow-0" />
+      ><div className="relative aspect-square">
+        <Image src={image} fill style={{objectFit:"contain"}} alt={alt} />
+        </div>
         <div className="p-4 flex flex-col justify-between flex-grow">
         <h3 className="font-bold text-2xl sm:text-lg">{name}</h3><p>{title}</p>
         <button link={emailLink} className="flex mt-4 relative">

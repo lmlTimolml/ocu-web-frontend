@@ -2,8 +2,7 @@ import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Button from "../ui/event-button";
 import Image from "next/image";
 
-function EventItem(props) {
-  const { title, image, date, time, location, id } = props;
+function EventItem({ title, image, date, time, location, id }) {
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

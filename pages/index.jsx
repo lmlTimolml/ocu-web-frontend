@@ -8,6 +8,7 @@ import ServiceList from "../components/services/service-list";
 import ContactImageModule from "../components/modules/contact-image-module";
 import FeaturedClientLogoList from "../components/clients/featured-client-logo-grid";
 
+
 const article = getAllArticles();
 const service = getAllServices();
 const events = getAllEvents();
@@ -20,20 +21,10 @@ export default function HomePage() {
         heading="Oculos er ledende i Norden innen CRM kundereiser, lojalitetsprogrammer og markedsføringsteknologi"
         message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon"
       />
-      <form>
-        <div>
-          <label htmlFor="email">Your email</label>
-          <input type="email" id="email" />
-        </div>
-        <div>
-          <label htmlFor="feedback">Your feedback</label>
-          <textarea id="feedback" rows="5" />
-        </div>
-        <button>Send feedback</button>
-      </form>
 
       <section className="px-5 py-6 bg-oculos-lightersage">
         <FeaturedList items={[article, events]} />
+        
       </section>
 
       <section className="px-5 py-6">

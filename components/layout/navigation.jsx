@@ -1,15 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { GET_GLOBALS } from "../../graphql/queries";
 
 console.log(GET_GLOBALS);
 
-
 export default function Navigation() {
-
   const [nav, setNav] = useState(false);
 
   const [color, setColor] = useState('transparent');
@@ -32,35 +28,33 @@ export default function Navigation() {
     window.addEventListener("scroll", changeColor);
   }, []);
 
-/* DATA FROM STRAPI */
+  /* GET DATA FROM STRAPI */
 
-const { loading, error, data } = useQuery(GET_GLOBALS);
-if (loading) return "Loading...";
-if (error) return `Error! ${error.message}`;
+  const { loading, error, data } = useQuery(GET_GLOBALS);
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
 
-const companylogo = data.global.data.attributes.navigation;
-const navlinks = data.global.data.attributes.navigation;
-/* const links =  data.global.data.attributes.navigation.navlink.data.attributes.url; */
-
-console.log(companylogo);
-
-/* DATA FROM STRAPI END */
+  const companylogo = data.global.data.attributes.navigation;
+  const navlinks = data.global.data.attributes.navigation.navlink;
+  const links = data.global.data.attributes.navigation.navlink.data.attributes.url;
+  
+  console.log(companylogo);
+  /* GET DATA END */
 
 return (
     <nav style={{backgroundColor: `${color}`}} className="fixed left-0 top-0 w-full z-10 ease-in duration-300 antialiased">
       <div className="h-5 bg-oculos-aqua"></div>
       <div className="max-w-[960px] mx-auto flex justify-between items-top">
-      {companylogo.companylogo.map((logo, i) => (
-      <Link href={logo.url}>
-                <Image
-                key={i}
-                src={logo.companylogo.data.attributes.url}
-                fill
-                style={{ objectFit: "contain" }}
-                alt={logo.alternativeText}
-              />
-              </Link>
-          ))}
+        <Link href="/" passHref>
+          {/* esLint-disable @next/next/no-img-element */}
+          <img
+            className="my-5 ml-5 lg:ml-0"
+            src="/oculogo_neg.svg"
+            width={200}
+            height={34}
+            alt="Home"
+          />
+        </Link>
         <ul style={{color: `${txtColor}`}} className="hidden min-[910px]:flex md:mr-5 lg:mr-0">
           <li className="py-4 pl-4">
             <Link style={{color: `${txtColor}`}}

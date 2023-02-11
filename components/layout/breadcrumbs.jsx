@@ -6,7 +6,7 @@ export default function Breadcrumb({ children }) {
 
   console.log(childrenArray);
 
-  const childrenWtihSeperator = childrenArray.map((child, index) => {
+  const childrenWtihSeparator = childrenArray.map((child, index) => {
     if (index !== childrenArray.length - 1) {
       return (
         <Fragment key={index}>
@@ -20,7 +20,7 @@ export default function Breadcrumb({ children }) {
 
   return (
     <nav className="max-w-[960px] mx-auto antialiased" aria-label="breadcrumb">
-      <ol className="p-1 flex items-center space-x-4 text-sm">{childrenWtihSeperator}</ol>
+      <ol className="p-1 flex items-center space-x-4 text-sm">{childrenWtihSeparator}</ol>
     </nav>
   );
 };

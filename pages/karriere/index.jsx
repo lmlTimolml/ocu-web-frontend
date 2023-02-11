@@ -1,6 +1,12 @@
+
+
 import Hero from "../../components/layout/hero";
 import { career } from "../../dummy-data";
 import CareerGrid from "../../components/career/career-grid";
+import client from "../../graphql/queries";
+import { GET_CONTACT_PAGE } from "../../graphql/queries";
+
+
 
 const careers = career();
 
@@ -16,3 +22,17 @@ const careerPage = () => {
 }
 
 export default careerPage;
+
+
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: GET_CONTACT_PAGE,
+  });
+
+  return {
+    props: {
+      column: data.contactPage.data.attributes.companyContactModule.companycontactinfo,
+    },
+  };
+}

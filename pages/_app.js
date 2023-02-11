@@ -1,12 +1,10 @@
 import "../styles/globals.css";
-import Layout from "../components/layout/layout";
 
-// Connecting Strapi
+// Connecting Strapi via Graphql
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
 } from "@apollo/client";
 
 const client = new ApolloClient({
@@ -15,13 +13,9 @@ const client = new ApolloClient({
 });
 
 export default function App({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page);
-console.log(client);
-  return getLayout(
+  return (
     <ApolloProvider client={client}>
-      <Layout>
         <Component {...pageProps} />
-      </Layout>
     </ApolloProvider>
   );
 }

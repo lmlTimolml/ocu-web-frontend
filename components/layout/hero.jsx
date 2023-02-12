@@ -48,10 +48,10 @@ export default function Hero({ heroTitle, heroDescription, heroButton, heroImage
           src={heroImage.data.attributes.url}
           alt={heroImage.data.attributes.alternativeText}
         />
-        <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/60 to-transparent z-[2]" />
-        <div className="text-white z-[2] mt-[-5rem] mx-5 lg:mx-auto min-w-3xl max-w-4xl">
-          <h2 className="text-5xl font-bold antialiased">{heroTitle}</h2>
-          <p className="py-5 text-xl antialiased">{heroDescription}</p>
+        <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
+        <div className="text-white z-[2] mx-5 lg:mx-auto min-w-3xl max-w-4xl">
+          <h2 className="text-3xl sm:text-5xl font-bold antialiased">{heroTitle}</h2>
+          <p className="py-5 text-lg sm:text-xl antialiased">{heroDescription}</p>
           {heroButton?.map((hero, i) => (
             <Button
               key={i}
@@ -63,7 +63,7 @@ export default function Hero({ heroTitle, heroDescription, heroButton, heroImage
           ))}
         </div>
       </header>
-      <section className="px-5 bg-oculos-lightersage mx-auto">
+      <section className="px-5 bg-white mx-auto">
         <Breadcrumb>
           <BreadcrumbItem href="/">Hjem</BreadcrumbItem>
           {breadcrumbs &&

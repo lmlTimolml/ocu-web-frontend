@@ -166,7 +166,7 @@ query HomePage($publicationState: PublicationState) {
             id
             title
             description
-            txtlinkmod01 {
+            link {
               id
               label
               url
@@ -177,8 +177,6 @@ query HomePage($publicationState: PublicationState) {
               linkText
               url
             }
-            logoSection {
-              id
               clientLogo {
                 id
                 clientlogo {
@@ -206,7 +204,6 @@ query HomePage($publicationState: PublicationState) {
                 }
                 clienturl
               }
-            }
           }
           ... on ComponentModulesContactModule {
             id
@@ -248,6 +245,66 @@ query HomePage($publicationState: PublicationState) {
         createdAt
         updatedAt
         publishedAt
+      }
+    }
+  }
+}
+`;
+
+
+/* Contactpage */
+export const GET_CONTACT_PAGE = gql`
+query {
+  contactPage {
+    data {
+      id
+      attributes {
+        pageTitle
+        slug
+        heroSection {
+          heroImage {
+            data {
+              attributes {
+                url
+                alternativeText
+                width
+                height
+              }
+            }
+          }
+          heroTitle
+          heroDescription
+          heroButton {
+            label
+            url
+          }
+        }
+        breadcrumbpath {
+          breadcrumb {
+            label
+            url
+            id
+          }
+        }
+        companyContactModule {
+          companycontactinfo {
+            icon {
+              data {
+                attributes {
+                  alternativeText
+                  url
+                  height
+                  width
+                }
+              }
+            }
+            description
+            address
+            email
+            phonenmbr
+            url
+          }
+        }
       }
     }
   }

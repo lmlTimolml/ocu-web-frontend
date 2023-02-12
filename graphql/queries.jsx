@@ -177,6 +177,7 @@ query HomePage($publicationState: PublicationState) {
             }
             serviceLinks {
               id
+              linkText
               label
               url
             }

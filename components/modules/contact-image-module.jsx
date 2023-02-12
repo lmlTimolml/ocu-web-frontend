@@ -3,13 +3,13 @@ import Image from "next/image"
 import Button from "../ui/featured-cta-button"
 
 
-export default function ContactImageModule({ content }) {
+export default function ContactImageModule({ __ComponentModulesContactModule }) {
   
-const {
+/* const {
   
-} = content;
+} = content; */
 
-console.log("hva er dette", content);
+console.log("hva er dette", __ComponentModulesContactModule);
 
   return (
     /* contact?.map((x, i) => ( */

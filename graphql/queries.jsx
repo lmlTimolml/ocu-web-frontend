@@ -85,8 +85,6 @@ query HomePage($publicationState: PublicationState) {
           }
         }
         highLights {
-          id
-          featuredEvent {
             id
             events {
               data {
@@ -124,8 +122,6 @@ query HomePage($publicationState: PublicationState) {
                 }
               }
             }
-          }
-          featuredNews {
             id
             articles {
               data {
@@ -163,7 +159,7 @@ query HomePage($publicationState: PublicationState) {
                 }
               }
             }
-          }
+          
         }
         dynamicHomePageSection {
           ... on ComponentModulesModul01 {
@@ -177,8 +173,8 @@ query HomePage($publicationState: PublicationState) {
             }
             serviceLinks {
               id
-              linkText
               label
+              linkText
               url
             }
             logoSection {
@@ -252,65 +248,6 @@ query HomePage($publicationState: PublicationState) {
         createdAt
         updatedAt
         publishedAt
-      }
-    }
-  }
-}
-`;
-
-/* Contactpage */
-export const GET_CONTACT_PAGE = gql`
-query {
-  contactPage {
-    data {
-      id
-      attributes {
-        pageTitle
-        slug
-        heroSection {
-          heroImage {
-            data {
-              attributes {
-                url
-                alternativeText
-                width
-                height
-              }
-            }
-          }
-          heroTitle
-          heroDescription
-          heroButton {
-            label
-            url
-          }
-        }
-        breadcrumbpath {
-          breadcrumb {
-            label
-            url
-            id
-          }
-        }
-        companyContactModule {
-          companycontactinfo {
-            icon {
-              data {
-                attributes {
-                  alternativeText
-                  url
-                  height
-                  width
-                }
-              }
-            }
-            description
-            address
-            email
-            phonenmbr
-            url
-          }
-        }
       }
     }
   }

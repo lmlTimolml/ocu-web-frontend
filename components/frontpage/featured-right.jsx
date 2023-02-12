@@ -1,17 +1,18 @@
 import Button from "../ui/text-button";
 import Image from "next/image";
 
-export default function FeaturedRight({ featuredNews }) {
+export default function FeaturedRight({ articleContent }) {
   
-  const { title, description, image, button, isFeatured, id } =
-    featuredNews.articles.data[0].attributes;
+  const { 
+    title, description, image, button, isFeatured, id } =
+    articleContent.attributes; 
 
-    console.log(image.url);
+console.log(articleContent);
 if(isFeatured)
     return (
-      <li key={id} className="flex antialiased content-center align-middle justify-between md:p-5 bg-oculos-harmony">
-        <div className="flex flex-col justify-between w-[48%]">
-          <h1 className="font-bold text-3xl mb-5">{title}</h1>
+      <li key={id} className="flex antialiased content-center align-middle justify-between md:p-5 my-5 bg-oculos-harmony w-full sm:w-[48%]">
+        <div className="flex flex-col justify-between w-[50%] p-5">
+          <h1 className="font-bold text-2xl mb-5">{title}</h1>
           <p className="font-medium text-lg mb-10">{description}</p>
           
         {button?.map((button, i) => (

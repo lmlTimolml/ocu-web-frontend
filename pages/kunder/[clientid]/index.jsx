@@ -1,25 +1,59 @@
-import { useRouter } from "next/router";
-import Layout from "../../../components/layout/layout";
+import Link from "next/link";
+import Image from "next/image";
+import Hero from "../../components/layout/hero";
 
-const mainClientPage = () => {
-    const router = useRouter();
-  
-    console.log(router.pathname);
-    console.log(router.query);
+import { getContactPageContent, getGlobalContent } from "../../lib/api";
+import Layout from "../../components/layout/layout";
 
-    function loadProjectHandler() {
-        // load data...
-        router.push({
-            pathname: "/kunder/[clientid]/[clientprojectid]",
-            query: { clientid: "Hardcoded Max", clientprojectid: "Hardcoded Project A" },
-        });
-    }
+export default function clientPage({
+  contactPage /* fetches prop from getStaticProps */,
+  globalContent,
+}) {
+  const {
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    companyContactModule: { companycontactinfo },
+    pageTitle,
+    breadcrumbpath: { breadCrumb },
+  } = contactPage; // fetch prop from pagefunction and deconstruct needed parts similar to graphql query
+
   return (
-    <Layout>
-      <h1>Main Page of { router.query.clientid }</h1>
-      <button onClick={ loadProjectHandler }>Load Project A</button>
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
+      <Hero />
+      <section className="flex justify-around mx-auto py-[20px] text-base antialiased max-w-[960px]">
+        {companycontactinfo?.map((info, i) => (
+          <div
+            key={i}
+            className="relative w-[33%] flex flex-col even:border-x-oculos-harmony even:border-x items-center"
+          >
+            <Link href={`${info.url}`}>
+              <Image
+                className="mb-4"
+                src={info.icon.data.attributes.url}
+                width={50}
+                height={50}
+                style={{ objectFit: "contain" }}
+                alt={info}
+              />
+            </Link>
+            <p>{info.description}</p>
+            <Link href={`${info.url}`}>{info.phonenmbr}</Link>
+            <Link href={`mailto:${info.email}`}>{info.email}</Link>
+            <Link href={`${info.url}`}>{info.address}</Link>
+          </div>
+        ))}
+      </section>
     </Layout>
   );
 }
 
-export default mainClientPage;
+export async function getStaticProps() {
+  const contactPage = await getContactPageContent(); // fetches query
+  const globalContent = await getGlobalContent();
+
+  return {
+    props: {
+      contactPage: contactPage.contactPage.data.attributes, // creates a const from toplevel query and serves it as prop
+      globalContent: globalContent.global.data.attributes,
+    },
+  };
+}

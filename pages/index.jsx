@@ -41,13 +41,12 @@ export default function HomePage({ frontPage, globalContent }) {
         <section key={i} className="py-16 antialiased max-w-[960px] mx-auto">
           <HeadingTextLink key={i} content={content} />
 
-          <ul className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
+          <section className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
             {content?.serviceLinks?.map((links, i) => (
               <ServiceItem key={i} links={links} />
-            ))}
-          </ul>
-
-          <ContactImageModule content={content} />
+              ))}
+          </section>
+          
         </section>
           ))}
       

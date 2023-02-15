@@ -1,11 +1,33 @@
+import Image from "next/image";
 
-import Image from "next/image"
+export default function ImageFull({ media }) {
+  /* const {
+    data: { attributes },
+  } = media; */
 
-export default function ImageFull({ image, imagecaption }) {
+  console.log("Hæh? Fra ImageFullModule");
+
   return (
-    <section className="max-w-[960px] mx-auto relative aspect-video">
-    <Image fill style={{objectFit:"cover"}} src="/images/extrovert-event.jpg" alt="image alt" />
-    <figcaption className="antialiased text-[0.75rem] mt-2">{imagecaption}</figcaption>
-      </section>
-  )
+    media?.data?.map((media, i) => (
+    <section key={i} className={`max-full bg-${oculos-oip} py-10`}>
+    <section key={i} className="max-w-[960px] mx-auto relative aspect-video">
+      
+      <div className="block">
+        <Image
+          fill
+          style={{ objectFit: "cover" }}
+          src={media.attributes.url}
+          alt={media.attributes.alternativeText}
+        />
+      </div>
+
+    </section>
+      <div>
+        <figcaption className="max-w-[960px] mx-auto mt-2 antialiased italic text-[0.75rem] relative">
+          {media.attributes.caption}
+        </figcaption>
+      </div>
+    </section>
+  ))
+  );
 }

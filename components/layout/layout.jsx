@@ -16,7 +16,11 @@ export default function Layout({ pageTitle, children, globalContent }) {
         <title>{pageTitle}</title>
       </Head>
 
-      <main>{children}</main>
+      <main>
+
+        {children}
+
+      </main>
 
       <div className="bg-oculos-lightsage px-5">
         <Footer companyinfo={companyinfo} socialmedia={socialmedia} footerlink={footerlink} backGroundColor={backGroundColor} />

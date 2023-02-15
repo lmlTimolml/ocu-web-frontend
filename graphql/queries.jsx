@@ -346,30 +346,47 @@ export { GET_INSPIRATION_PAGE };
 
 /* Services Page */
 
-const GET_SERVICES_PAGE = gql`
-query Footer($pagination: PaginationArg, $publicationState: PublicationState, $servicesPagePublicationState2: PublicationState, $filters: ServiceFiltersInput) {
-  servicesPage(publicationState: $servicesPagePublicationState2) {
+export const GET_SERVICES_PAGE = gql`
+query Query {
+  servicesPage {
     data {
       id
       attributes {
         pageTitle
         slug
         heroSection {
+          id
           heroImage {
             data {
+              id
               attributes {
+                name
+                alternativeText
+                caption
                 width
                 height
+                formats
+                hash
+                ext
+                mime
+                size
                 url
-                alternativeText
+                previewUrl
+                provider
+                provider_metadata
+                createdAt
+                updatedAt
               }
             }
+            
           }
           heroTitle
           heroDescription
           heroButton {
+            id
             label
             url
+            linkText
           }
         }
         breadcrumbpath {
@@ -378,53 +395,59 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
             id
             label
             url
+            linkText
           }
         }
         serviceLinks {
+          id
           label
           url
-          id
+          linkText
         }
         servicesPopulate {
-          services(pagination: $pagination, publicationState: $publicationState, filters: $filters) {
+          id
+          service {
             data {
+              id
               attributes {
                 pageTitle
                 slug
-                mediaModule {
-                  Media {
-                    data {
-                      attributes {
-                        alternativeText
-                        width
-                        height
-                        caption
-                        url
-                      }
-                    }
-                  }
-                }
                 serviceHeadingComponent {
+                  id
                   serviceHeading
                   serviceContent
-                  id
                 }
                 dynamicServicePageContent {
+                  __typename
                   ... on ComponentModulesTxtLLandscapeRModule {
                     id
                     heading
                     content
                     media {
                       data {
+                        id
                         attributes {
+                          name
                           alternativeText
+                          caption
                           width
                           height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
                           url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
                         }
                       }
                     }
                   }
+                  __typename
                   ... on ComponentModulesTxtLSquareRModule {
                     id
                     heading
@@ -446,14 +469,14 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
                           url
                           previewUrl
                           provider
+                          provider_metadata
                           createdAt
                           updatedAt
-                          provider_metadata
                         }
                       }
-                      
                     }
                   }
+                  __typename
                   ... on ComponentModulesTxtRLandscapeLModule {
                     id
                     heading
@@ -481,8 +504,8 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
                         }
                       }
                     }
-                    
                   }
+                  __typename
                   ... on ComponentModulesTxtRSquareRModule {
                     id
                     heading
@@ -510,7 +533,20 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
                         }
                       }
                     }
+                    shortcut {
+                      data {
+                        id
+                        attributes {
+                          name
+                          slug
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                      
+                    }
                   }
+                  __typename
                   ... on ComponentSharedSeo {
                     id
                     metaSocial {
@@ -573,21 +609,30 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
                     metaViewport
                     canonicalURL
                   }
+                  __typename
                   ... on ComponentModulesQuoteModule {
                     id
                     quote
                     source
                   }
+                  __typename
                   ... on ComponentModulesRichTextModule {
                     id
+                    heading
                     richTxt
-                    backGroundColor
+                    backgroundColor {
+                      id
+                      bgColor
+                    }
                   }
+                  __typename
                   ... on ComponentSharedLink {
                     id
                     label
                     url
+                    linkText
                   }
+                  __typename
                   ... on ComponentModulesShortcutsModule {
                     id
                     heading
@@ -595,21 +640,45 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
                       id
                       label
                       url
+                      linkText
                     }
                   }
+                  __typename
                   ... on Error {
                     code
                     message
+                  }
+                }
+                media {
+                  data {
+                    id
+                    attributes {
+                      name
+                      alternativeText
+                      caption
+                      width
+                      height
+                      formats
+                      hash
+                      ext
+                      mime
+                      size
+                      url
+                      previewUrl
+                      provider
+                      provider_metadata
+                      createdAt
+                      updatedAt
+                    }
                   }
                 }
                 createdAt
                 updatedAt
                 publishedAt
               }
-              id
             }
+            
           }
-          id
         }
         createdAt
         updatedAt
@@ -620,7 +689,6 @@ query Footer($pagination: PaginationArg, $publicationState: PublicationState, $s
 }
 `
 ;
-export { GET_SERVICES_PAGE};
 
 /* GLOBALS */
 

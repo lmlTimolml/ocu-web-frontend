@@ -2,74 +2,67 @@ import Link from "next/link";
 import Hero from "../../components/layout/hero";
 import ImageFull from "../../components/modules/image-full";
 import HeadingTextElement from "../../components/modules/heading-description-element";
-import PlainText from "../../components/modules/plain-text";
+import PlainText from "../../components/modules/rich-text";
 import BulletList from "../../components/modules/bulletlist";
 import ImageTwoCol from "../../components/modules/image-2-col";
 import ContactImageModule from "../../components/modules/contact-image-module";
 
 import { getGlobalContent, getServicesPageContent } from "../../lib/api";
 import Layout from "../../components/layout/layout";
+import ServiceItemsMain from "../../components/services/service-item-main";
+import ServicesPageLayout from "../../components/layout/servicepage-layout";
 
-export default function servicesPage({globalContent, servicesPage}) {
+export default function servicesPage({ globalContent, pageContent }) {
 
- const {
+  // Deconstruct the props
+  const {
     heroSection: { heroTitle, heroDescription, heroButton, heroImage },
     pageTitle,
-    breadcrumbpath: { breadCrumb },
-  } = servicesPage; 
+    breadcrumbpath,
+    serviceLinks,
+    servicesPopulate: {service},
+  } = pageContent;
+        
 
-  console.log(servicesPage);
-  console.log(globalContent);
+  console.log("Page: Tjenester", service);
+        // Return page content
+        
+        return (
+          <Layout globalContent={globalContent} pageTitle={pageTitle}>
+      <Hero heroTitle={heroTitle} heroDescription={heroDescription} heroButton={heroButton} heroImage={heroImage} breadcrumbpath={breadcrumbpath} />
+      
+      <section className="w-full bg-oculos-lightsage py-10">
+      <div className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 bg-transparent antialiased max-w-[960px] mx-auto">
+      {serviceLinks?.map((links, i) => (
+        <ServiceItemsMain key={i} links={links} />
+        ))}
 
-  return (
+      </div>
+      
+      </section>
+      
     
-    <Layout globalContent={globalContent} pageTitle={pageTitle}>
-    <Hero heroTitle={heroTitle} heroDescription={heroDescription} heroButton={heroButton} heroImage={heroImage} />
-       <section className="px-5 py-6">
-        <ImageFull imagecaption="Bildetekst. Foto: Navn Navnesen 2023." />
-      </section>
+        <ServicesPageLayout service={service} />
 
-      <section className="px-5 py-6">
-        <HeadingTextElement
-          title="Rådgivning og strategi"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, eveniet ab. Accusamus quasi porro veritatis, officia odit rerum sint fugiat cum, quae ducimus repellat! Officiis eligendi qui impedit minima rem!"
-        />
-      </section>
+      <div>
 
-      <section className="px-5 py-6">
-        <PlainText />
-      </section>
 
-      <section className="md:px-0 px-5 py-6 flex flex-col md:gap-x-8 md:gap-y-4 md:grid md:grid-cols-[minmax(0px,_1fr)_minmax(120px,_463px)_minmax(120px,_463px)minmax(0px,_1fr)] antialiased mx-auto relative">
-        <div className="md:col-start-2 mb-4 md:mb-0">
-          <BulletList
-            title="Punktliste"
-            bulletpoints="Lorem ipsum dolor sit amet, consetetur"
-          />
-        </div>
-        <div className="md:col-start-3 sm:col-span-2 relative">
-          <ImageTwoCol />
-        </div>
-      </section>
-
-      <section className="px-5 py-6">
-        <ContactImageModule />
-      </section>
+      </div>
     
-      </Layout>
+    
+    </Layout>
   );
 }
 
-export async function getStaticProps() {
 
-  const servicesPage = await getServicesPageContent();
+export async function getStaticProps() {
+  const pageContent = await getServicesPageContent();
   const globalContent = await getGlobalContent();
 
   return {
-    props: { 
-      servicesPage: servicesPage.servicesPage.data.attributes,
-      globalContent: globalContent.global.data.attributes
+    props: {
+      pageContent: pageContent.servicesPage.data.attributes,
+      globalContent: globalContent.global.data.attributes,
     },
-
   };
 }

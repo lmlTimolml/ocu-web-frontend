@@ -12,13 +12,10 @@ export default function HomePage({ frontPage, globalContent }) {
   const {
     heroSection: { heroTitle, heroDescription, heroButton, heroImage },
     dynamicHomePageSection,
-    contactModule,
     highLights: { events, articles },
     pageTitle,
     breadcrumbpath,
   } = frontPage;
-
-console.log("ny modul", dynamicHomePageSection.contactModule);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -44,15 +41,11 @@ console.log("ny modul", dynamicHomePageSection.contactModule);
         <section key={i} className="py-16 antialiased max-w-[960px] mx-auto">
           <HeadingTextLink key={i} content={content} />
 
-          <ul className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
+          <section className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
             {content?.serviceLinks?.map((links, i) => (
               <ServiceItem key={i} links={links} />
               ))}
-          </ul>
-          
-              {contactModule?.map((contact, i) => (
-                <ContactImageModule key={i} contact={contact} />
-                ))}
+          </section>
           
         </section>
           ))}

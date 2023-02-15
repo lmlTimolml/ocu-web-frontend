@@ -85,8 +85,6 @@ query HomePage($publicationState: PublicationState) {
           }
         }
         highLights {
-          id
-          featuredEvent {
             id
             events {
               data {
@@ -124,8 +122,6 @@ query HomePage($publicationState: PublicationState) {
                 }
               }
             }
-          }
-          featuredNews {
             id
             articles {
               data {
@@ -163,26 +159,24 @@ query HomePage($publicationState: PublicationState) {
                 }
               }
             }
-          }
+          
         }
         dynamicHomePageSection {
           ... on ComponentModulesModul01 {
             id
             title
             description
-            txtlinkmod01 {
+            link {
               id
               label
               url
             }
             serviceLinks {
               id
-              linkText
               label
+              linkText
               url
             }
-            logoSection {
-              id
               clientLogo {
                 id
                 clientlogo {
@@ -210,7 +204,6 @@ query HomePage($publicationState: PublicationState) {
                 }
                 clienturl
               }
-            }
           }
           ... on ComponentModulesContactModule {
             id
@@ -257,6 +250,7 @@ query HomePage($publicationState: PublicationState) {
   }
 }
 `;
+
 
 /* Contactpage */
 export const GET_CONTACT_PAGE = gql`

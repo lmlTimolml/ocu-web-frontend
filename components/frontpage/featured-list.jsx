@@ -1,16 +1,21 @@
 import FeaturedRight from "./featured-right";
 import FeaturedLeft from "./featured-left";
 
-export default function FeaturedList({ featuredEvent, featuredNews }) {
-  console.log(featuredNews);
+export default function HighLights({ highlights, featuredNews }) {
+
+  const {
+    
+  } = highlights;
+
+  console.log("H " + highlights);
+
   return (
-    <ul className="grid gap-x-4 gap-y-4 auto-cols-fr grid-cols-2 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
-      {featuredEvent?.map((featuredEvent, i) => (
-        <FeaturedLeft key={i} featuredEvent={featuredEvent} />
-      ))}
-       {featuredNews?.map((featuredNews, i) => (
-        <FeaturedRight key={i} featuredNews={featuredNews} />
-      ))}  
+    <ul className="flex flex-col sm:flex-row justify-between content-between p-5 bg-transparent antialiased bg-oculos-lightersage">
+    <li className="flex flex-col sm:flex-row justify-between content-between p-5 bg-transparent antialiased max-w-[960px] mx-auto">
+      
+        {/* <FeaturedLeft /> */}
+      
+      </li>
     </ul> 
   );
 }

@@ -13,7 +13,7 @@ export default function Navigation({companylogo, navlink}) {
   };
 
   return (
-    <nav className="fixed left-0 top-0 w-full z-10 ease-in duration-300 antialiased bg-oculos-lightersage">
+    <nav className="fixed left-0 top-0 w-full z-10 antialiased bg-oculos-lightsage">
       <div className="py-4 max-w-[960px] mx-auto flex justify-between items-top">
         <div className="max-[960px]:ml-5 relative h-auto w-52">
           <Link href="/">
@@ -31,7 +31,7 @@ export default function Navigation({companylogo, navlink}) {
             <li key={i} className="pl-4">
               <Link
                 href={link.url}
-                className="border-t-0 border-r-0 border-b-0 hover:text-oculos-aqua hover:border-b hover:pb-1 border-l-0 border-oculos-oip duration-300"
+                className="hover:font-bold ease-linear"
               >
                 {link.label}
               </Link>

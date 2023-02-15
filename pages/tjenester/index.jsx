@@ -2,16 +2,30 @@ import Link from "next/link";
 import Hero from "../../components/layout/hero";
 import ImageFull from "../../components/modules/image-full";
 import HeadingTextElement from "../../components/modules/heading-description-element";
-import ServiceNav from "../../components/layout/nested-layout";
 import PlainText from "../../components/modules/plain-text";
 import BulletList from "../../components/modules/bulletlist";
 import ImageTwoCol from "../../components/modules/image-2-col";
 import ContactImageModule from "../../components/modules/contact-image-module";
 
-export default function servicesPage() {
+import { getGlobalContent, getServicesPageContent } from "../../lib/api";
+import Layout from "../../components/layout/layout";
+
+export default function servicesPage({globalContent, servicesPage}) {
+
+ const {
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    pageTitle,
+    breadcrumbpath: { breadCrumb },
+  } = servicesPage; 
+
+  console.log(servicesPage);
+  console.log(globalContent);
+
   return (
-    <>
-      <section className="px-5 py-6">
+    
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
+    <Hero heroTitle={heroTitle} heroDescription={heroDescription} heroButton={heroButton} heroImage={heroImage} />
+       <section className="px-5 py-6">
         <ImageFull imagecaption="Bildetekst. Foto: Navn Navnesen 2023." />
       </section>
 
@@ -41,22 +55,21 @@ export default function servicesPage() {
       <section className="px-5 py-6">
         <ContactImageModule />
       </section>
-    </>
+    
+      </Layout>
   );
 }
 
-servicesPage.getLayout = function getLayout(page) {
-  return (
-    <>
-      <Hero
-        heading="index"
-        message="Kort setning om at vi leverer tjenester innen CRM og Loyalty. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-      />
-      <section className="bg-oculos-lightsage px-5 py-11">
-        <ServiceNav />
-      </section>
+export async function getStaticProps() {
 
-      {page}
-    </>
-  );
-};
+  const servicesPage = await getServicesPageContent();
+  const globalContent = await getGlobalContent();
+
+  return {
+    props: { 
+      servicesPage: servicesPage.servicesPage.data.attributes,
+      globalContent: globalContent.global.data.attributes
+    },
+
+  };
+}

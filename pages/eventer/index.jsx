@@ -1,26 +1,22 @@
-import { useRouter } from "next/router";
-import { getAllEvents } from "../../dummy-data";
-import EventList from "../../components/events/event-list";
-import EventSearch from "../../components/events/event-search";
 import Hero from "../../components/layout/hero";
+import { useQuery } from "@apollo/client";
+import { GET_GLOBALS } from "../../graphql/queries";
 
-const AllEventsPage = () => {
-  const router = useRouter();
-  const events = getAllEvents();
+const Eventer = ({ info }) => {
+  const { loading, error, data } = useQuery(GET_GLOBALS);
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
 
-  function findEventsHandler(year, month) {
-    const fullPath = `/eventer/${year}/${month}`;
-    router.push(fullPath);
-  }
-
+  const footer = (data.global.data.attributes.footer);
   return (
     <>
-      <Hero heading="Eventer" message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon" />
-        <EventSearch onSearch={findEventsHandler} />
-        <EventList items={events} />
+      <Hero
+        heading="Eventer"
+        message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon"
+      />
+
     </>
   );
-}
+};
 
-export default AllEventsPage;
-
+export default Eventer;

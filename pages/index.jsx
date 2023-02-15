@@ -1,63 +1,62 @@
-import Link from "next/link";
-import HeadingText from "../components/modules/heading-description";
-import HeadingTextLink from "../components/modules/heading-description-link";
+
+import Layout from "../components/layout/layout";
 import Hero from "../components/layout/hero";
+import { getFrontPageContent, getGlobalContent } from "../lib/api";
+
+import ServiceItem from "../components/services/service-item";
 import FeaturedList from "../components/frontpage/featured-list";
-import { getAllArticles, getAllServices, getAllEvents, clientLogos } from "../dummy-data";
-import ServiceList from "../components/services/service-list";
-import ContactImageModule from "../components/modules/contact-image-module";
-import FeaturedClientLogoList from "../components/clients/featured-client-logo-grid";
 
-const article = getAllArticles();
-const service = getAllServices();
-const events = getAllEvents();
-const featuredLogos = clientLogos();
+export default function HomePage({ frontPage, globalContent }) {
+  const {
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    dynamicHomePageSection,
+    highLights: {featuredEvent, featuredNews},
+    pageTitle,
+    breadcrumbpath,
+  } = frontPage;
 
-export default function HomePage() {
+console.log(dynamicHomePageSection);
+
   return (
-    <>
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero
-        heading="Oculos er ledende i Norden innen CRM kundereiser, lojalitetsprogrammer og markedsføringsteknologi"
-        message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon"
+        heroTitle={heroTitle}
+        heroDescription={heroDescription}
+        heroButton={heroButton}
+        heroImage={heroImage}
+        breadcrumbpath={breadcrumbpath}
       />
-      <form>
-        <div>
-          <label htmlFor="email">Your email</label>
-          <input type="email" id="email" />
-        </div>
-        <div>
-          <label htmlFor="feedback">Your feedback</label>
-          <textarea id="feedback" rows="5" />
-        </div>
-        <button>Send feedback</button>
-      </form>
 
-      <section className="px-5 py-6 bg-oculos-lightersage">
-        <FeaturedList items={[article, events]} />
-      </section>
+    
+      <FeaturedList featuredEvent={featuredEvent} featuredNews={featuredNews} />
+  
+      {dynamicHomePageSection?.map((content, i) => (
+        <section key={i} className="py-6 antialiased max-w-[960px] mx-auto">
+          <div>
+            <h1 className="font-bold text-5xl mb-5">{content.title}</h1>
+            <p className="font-medium text-2xl mb-5">{content.description}</p>
+          </div>
 
-      <section className="px-5 py-6">
-        <HeadingText
-          title="Våre tjenester"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, eveniet ab. Accusamus quasi porro veritatis, officia odit rerum sint fugiat cum, quae ducimus repellat! Officiis eligendi qui impedit minima rem!"
-        />
-        <ServiceList items={service} />
-      </section>
-
-      <section className="px-5 py-6 bg-oculos-lightersage">
-        <HeadingTextLink
-          title="Våre kunder"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, eveniet ab. Accusamus quasi porro veritatis, officia odit rerum sint fugiat cum, quae ducimus repellat! Officiis eligendi qui impedit minima rem!"
-          link="Les mer om våre kunder her"
-        />
-
-        <FeaturedClientLogoList info={featuredLogos} />
-
-      </section>
-
-<section className="px-5 py-6">
-  <ContactImageModule />
-</section>
-    </>
+          <ul className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
+            {content?.serviceLinks?.map((serviceLinks, i) => (
+              <ServiceItem key={i} serviceLinks={serviceLinks} />
+            ))}
+          </ul>
+        </section>
+      ))}
+      ;
+    </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const frontPage = await getFrontPageContent();
+  const globalContent = await getGlobalContent();
+
+  return {
+    props: {
+      frontPage: frontPage.homePage.data.attributes,
+      globalContent: globalContent.global.data.attributes,
+    },
+  };
 }

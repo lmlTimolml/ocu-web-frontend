@@ -8,7 +8,9 @@ export default function LeaderGrid({ info }) {
         <ImageTwoCol />
       </li>
 
-      {info.map((employee) => (
+      {info.map(employee => {
+        if (employee.isLeader === true) 
+        return [
         <EmployeeCard
           key={employee.id}
           id={employee.id}
@@ -18,7 +20,7 @@ export default function LeaderGrid({ info }) {
           image={employee.image}
           email={employee.email}
         />
-      ))}
+]      })}
     </ul>
   );
 }

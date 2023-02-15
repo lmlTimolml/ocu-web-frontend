@@ -1,5 +1,5 @@
 import { FaCalendar, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import ModuleImgLftQtRgt from "../layout/module-imglft-qtrgt";
+import HeadingText from "../modules/heading-description";
 
 function EventLogistics({ date, time, address, image, imageAlt }) {
 
@@ -12,7 +12,7 @@ function EventLogistics({ date, time, address, image, imageAlt }) {
 
   return (
     <>
-      <ModuleImgLftQtRgt />
+    <HeadingText />
     <section className="max-w-[960px] mx-auto mt-5">
       <div className="flex">
         <img src={`/${image}`} alt={imageAlt} />

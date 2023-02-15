@@ -30,7 +30,7 @@ module.exports = {
     },
     listStyleType: {
       square: 'square',
-    }
+    },
   },
   plugins: [],
 }

@@ -1,13 +1,21 @@
 import "../styles/globals.css";
-import Layout from "../components/layout/layout";
+
+// Connecting Strapi via Graphql
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "http://0.0.0.0:1337/graphql",
+  cache: new InMemoryCache(),
+});
 
 export default function App({ Component, pageProps }) {
-
-  const getLayout = Component.getLayout || ((page) => page)
-
-  return getLayout(
-    <Layout>
-  <Component {...pageProps} />
-  </Layout>
+  return (
+    <ApolloProvider client={client}>
+        <Component {...pageProps} />
+    </ApolloProvider>
   );
 }

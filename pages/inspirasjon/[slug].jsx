@@ -15,7 +15,7 @@ export default function Post({ post }) {
         </section>
         <section className="sm:col-start-3 sm:col-end-5 h-24 sm:h-full bg-slate-200 sm:bg-slate-500">
         <img
-          src={cover.url}
+          src= {`http://localhost:1337/${cover.url}`}
           width={300}
           height={200}
           alt={post.title}

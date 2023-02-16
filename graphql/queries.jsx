@@ -621,7 +621,15 @@ query Query {
                     heading
                     richTxt
                     backgroundColor {
-                      id
+                      bgColor
+                    }
+                  }
+                  __typename
+                  ... on ComponentModulesRichTextElementModule {
+                    id
+                    heading
+                    richTxt
+                    backgroundColor {
                       bgColor
                     }
                   }

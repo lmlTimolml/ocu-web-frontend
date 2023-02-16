@@ -27,10 +27,13 @@ module.exports = {
       'corner-tl': 'url("/icons/element-aqua.svg")',
       'line': 'url("/icons/line_element.svg")',
       'chevron-circle': 'url("/icons/circle-chevron.svg")',
+      'quote': 'url("/icons/icon_quote.svg")',
     },
     listStyleType: {
       square: 'square',
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),    
+  ],
 }

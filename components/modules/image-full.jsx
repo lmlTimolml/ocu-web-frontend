@@ -9,7 +9,7 @@ export default function ImageFull({ media }) {
 
   return (
     media?.data?.map((media, i) => (
-    <section key={i} className={`max-full bg-${oculos-oip} py-10`}>
+    <section key={i} className={`max-full py-10`}>
     <section key={i} className="max-w-[960px] mx-auto relative aspect-video">
       
       <div className="block">

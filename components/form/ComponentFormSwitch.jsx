@@ -14,7 +14,7 @@ export default function ComponentFormSwitch({
               />
               <label
                 className="pl-[0.15rem] hover:cursor-pointer"
-                for="selectAll"
+                htmlFor="selectAll"
               >
                 {placeholder}
               </label>

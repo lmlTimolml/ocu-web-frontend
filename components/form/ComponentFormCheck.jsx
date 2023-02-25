@@ -30,7 +30,7 @@ export default function ComponentFormCheck({
           </g>
         </svg>
       </div>
-      <label for={fieldID} className="mt-[-2px]">{placeholder}</label>
+      <label htmlFor={fieldID} className="mt-[-2px]">{placeholder}</label>
     </div>
   );
 }

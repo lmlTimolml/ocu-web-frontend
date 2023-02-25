@@ -11,7 +11,7 @@ export default function ComponentSharedButton({label, link, txt, style}) {
     
     return (
         <div class="flex py-3">
-    <Button label={label} txt={txt} link={link} style={style} />
+    <Button label={label} txt={txt} link={link} style={style} type="submit" />
     </div>
     );
 

@@ -10,7 +10,7 @@ export default function ComponentFormInput({
     <>
       
     <div className="flex flex-col">
-    <label for={fieldID} className="text-sm mb-1">{fieldname}</label>
+    <label htmlFor={fieldID} className="text-sm mb-1">{fieldname}</label>
     <input type="text" id={fieldID} name={fieldID} className="w-full h-11 outline-none border border-gray-400 pl-2" value={placeholder} />
   </div>
     </>

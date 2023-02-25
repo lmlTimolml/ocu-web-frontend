@@ -18,7 +18,7 @@ export default function Article({pageContent, globalContent }) {
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Inspirasjon", pageContent);
+  console.log("Page: Inspirasjon: Articleslug", pageContent);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>

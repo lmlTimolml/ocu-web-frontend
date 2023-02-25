@@ -5,26 +5,28 @@ import Footer from "./footer";
 export default function Layout({ pageTitle, children, globalContent }) {
   
   const {
-    navigation: { companylogo, navlink },
-    footer: { companyinfo, socialmedia, footerlink, backGroundColor },
+    navigation,
+    footer,
   } = globalContent;
 
   return (
     <>
-      <Nav companylogo={companylogo} navlink={navlink} />
+      <Nav navigation={navigation} />
+
       <Head>
         <title>{pageTitle}</title>
       </Head>
 
-      <main>
+      <main className="text-base antialiased">
 
         {children}
 
       </main>
 
-      <div className="bg-oculos-lightsage px-5">
-        <Footer companyinfo={companyinfo} socialmedia={socialmedia} footerlink={footerlink} backGroundColor={backGroundColor} />
-      </div>
+      
+        <Footer footer={footer} />
+
+      
     </>
   );
 }

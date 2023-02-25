@@ -2,9 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { customColors } from "../../customdata";
 
-export default function Navigation({companylogo, navlink}) {
+const background = customColors();
 
+export default function Navigation({navigation}) {
+
+  const {
+    companylogo, navlink, bgColor: {bgcolor},
+  } = navigation;
 
   const [nav, setNav] = useState(false);
 
@@ -13,7 +19,7 @@ export default function Navigation({companylogo, navlink}) {
   };
 
   return (
-    <nav className="fixed left-0 top-0 w-full z-10 antialiased bg-oculos-lightsage">
+    <nav className="fixed left-0 top-0 w-full z-10 antialiased" style={{ backgroundColor: `${background[bgcolor]}`}}>
       <div className="py-4 max-w-[960px] mx-auto flex justify-between items-top">
         <div className="max-[960px]:ml-5 relative h-auto w-52">
           <Link href="/">
@@ -21,7 +27,7 @@ export default function Navigation({companylogo, navlink}) {
               src={companylogo.data.attributes.url}
               width={190}
               height={25}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", width: "190", height:"25" }}
               alt={companylogo.data.attributes.alternativeText}
             />
           </Link>
@@ -31,7 +37,7 @@ export default function Navigation({companylogo, navlink}) {
             <li key={i} className="pl-4">
               <Link
                 href={link.url}
-                className="hover:font-bold ease-linear"
+                className="hover:font-bold tracking-[0.44px] hover:tracking-normal ease-linear"
               >
                 {link.label}
               </Link>
@@ -58,7 +64,7 @@ export default function Navigation({companylogo, navlink}) {
               <li
                 key={i}
                 onClick={handleNav}
-                className="p-4 hover:text-oculos-aqua duration-300"
+                className="p-4 hover:text-oculos-aqua hover:font-bold duration-300"
               >
                 <Link href={link.url}>{link.label}</Link>
               </li>

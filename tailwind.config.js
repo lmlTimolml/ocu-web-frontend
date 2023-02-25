@@ -8,16 +8,16 @@ module.exports = {
     extend: {
       colors: {
         oculos: {
-          lightsage: '#DFE9E0',
           harmony: '#BFCEBB',
           aqua: '#04808D',
           oip: '#BBDDE6',
           peppa:'#E4D5D3',
-          magenta:'#843E77',
           lightgrey:'#F5F5F5',
+          lightsage:'#DFE9E0',
           lightersage:'#F1F6F3',
           lightoip:'#EBF5F8',
           piglet:'#FFF3F2',
+          hvit:'white',
         },
       },
     },

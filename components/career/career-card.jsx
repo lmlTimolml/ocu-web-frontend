@@ -9,7 +9,7 @@ export default function CareerCard({ id, title, description, image, alt, isFeatu
     <Link href={carrierLink}>
       <li
         key={id}
-        className="group/main-parent flex flex-col h-full bg-oculos-peppa antialiased"
+        className="group/main-parent flex flex-col h-full" style={{ backgroundColor: `${background[bgcolor]}`}}
       ><div className="relative aspect-video">
         <Image src={image} fill style={{objectFit:"contain"}} alt={alt} />
         </div>

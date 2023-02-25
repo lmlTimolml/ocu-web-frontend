@@ -9,7 +9,7 @@ export default function ClientCard({ id, image, alt, title, description, link })
     <Link href={clientLink}>
       <li
         key={id}
-        className="group/main-parent flex flex-col h-full bg-oculos-harmony antialiased"
+        className="group/main-parent flex flex-col h-full" style={{ backgroundColor: `${background[bgcolor]}`}}
       >
         <Image src={image} height={200} width={450} alt={alt} className="flex-grow-0" />
         <div className="p-4 flex flex-col justify-between flex-grow">

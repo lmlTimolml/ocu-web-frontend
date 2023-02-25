@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Button from "../ui/outline-button";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Breadcrumb from "./breadcrumbs";
 import BreadcrumbItem from "./breadcrumb-item";
 
-export default function Hero({ heroTitle, heroDescription, heroButton, heroImage, breadcrumbpath }) {
+export default function Hero({ heroTitle, heroDescription, heroImage, breadcrumbpath }) {
   
   /* Breadcrumbs from Strapi
 
@@ -15,6 +14,7 @@ export default function Hero({ heroTitle, heroDescription, heroButton, heroImage
   */
 
   /* Breadcrumbs */
+
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState();
 
@@ -50,17 +50,8 @@ export default function Hero({ heroTitle, heroDescription, heroButton, heroImage
         />
         <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
         <div className="text-white z-[2] mx-5 lg:mx-auto min-w-3xl max-w-4xl">
-          <h2 className="text-3xl sm:text-5xl font-bold antialiased">{heroTitle}</h2>
-          <p className="py-5 text-lg sm:text-xl antialiased">{heroDescription}</p>
-          {heroButton?.map((hero, i) => (
-            <Button
-              key={i}
-              link={hero.url}
-              className="px-6 hover:cursor-square py-2 border antialiased hover:bg-white hover:text-black ease-linear duration-150"
-            >
-              {hero.label}
-            </Button>
-          ))}
+          <h2 className="text-3xl sm:text-5xl font-bold">{heroTitle}</h2>
+          <p className="py-5 text-lg sm:text-xl">{heroDescription}</p>
         </div>
       </header>
       <section className="px-5 bg-white mx-auto">

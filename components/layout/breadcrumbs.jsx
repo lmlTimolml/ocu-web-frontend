@@ -19,7 +19,7 @@ export default function Breadcrumb({ children }) {
   });
 
   return (
-    <nav className="max-w-[960px] mx-auto antialiased" aria-label="breadcrumb">
+    <nav className="max-w-[960px] mx-auto" aria-label="breadcrumb">
       <ol className="p-1 flex items-center space-x-4 text-sm">{childrenWtihSeparator}</ol>
     </nav>
   );

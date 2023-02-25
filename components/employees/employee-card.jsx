@@ -9,7 +9,7 @@ export default function EmployeeCard({ id, name, title, image, alt, isLeader, em
     <Link href={emailLink}>
       <li
         key={id}
-        className="group/main-parent flex flex-col h-full bg-oculos-harmony antialiased"
+        className="group/main-parent flex flex-col h-full" style={{ backgroundColor: `${background[bgcolor]}`}}
       ><div className="relative aspect-square">
         <Image src={image} fill style={{objectFit:"contain"}} alt={alt} />
         </div>

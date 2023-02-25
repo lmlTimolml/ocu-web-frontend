@@ -1,32 +1,50 @@
-import Link from "next/link";
-import FeaturedClientGrid from "../../components/clients/featured-client-grid";
-import ClientLogoList from "../../components/clients/client-logo-grid";
-import ContactImageModule from "../../components/modules/contact-image-module";
+import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
-import { clients, clientLogos } from "../../dummy-data";
+import { getClientsPageContent, getGlobalContent } from "../../lib/api";
+import { customColors } from "../../customdata";
 
-export default function clientsPage() {
-  const client = clients();
-  const logos = clientLogos();
+const background = customColors();
+
+export default function clientsPage({pageContent, globalContent }) {
+  const {
+    pageTitle,
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    breadcrumbpath
+  } = pageContent;
+
+  const components = Feed?.map((component) => {
+    const ComponentType =
+    require(`../../components/modules/${component.__typename}`).default;
+    return <ComponentType key={component.id} {...component} />;
+  });
+
+  console.log("Page: Kunder", pageContent);
 
   return (
-    <>
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero
-        heading="Kunder"
-        message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon"
+        heroTitle={heroTitle}
+        heroDescription={heroDescription}
+        heroButton={heroButton}
+        heroImage={heroImage}
       />
+      
+      {components?.map((components, i) => {
+        return <section key={i}>{components}</section>;
+      })}
 
-      <section className="px-5 py-6">
-        <FeaturedClientGrid info={client} />
-      </section>
-
-      <section className="px-5 py-6 bg-oculos-lightersage">
-        <ClientLogoList info={logos} />
-      </section>
-
-      <section className="px-5 py-6">
-        <ContactImageModule />
-      </section>
-    </>
+    </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const pageContent = await getClientsPageContent(); // fetches query
+  const globalContent = await getGlobalContent();
+
+  return {
+    props: {
+      pageContent: pageContent.clientsPage.data.attributes, // creates a const from toplevel query and serves it as prop
+      globalContent: globalContent.global.data.attributes,
+    },
+  };
 }

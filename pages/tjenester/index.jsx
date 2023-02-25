@@ -1,54 +1,56 @@
-import Link from "next/link";
-import Image from "next/image";
-import Layout from "../../components/layout/layout";
-import Hero from "../../components/layout/hero";
-import { getServicePageContent, getGlobalContent } from "../../lib/api";
-import { customColors } from "../../customdata";
+import Layout from "../components/layout/layout";
+import Hero from "../components/layout/hero";
+import { getServicesPageContent, getGlobalContent } from "../lib/api";
+import { customColors } from "../customdata";
 
 const background = customColors();
 
-export default function servicesPage({ globalContent, pageContent }) {
+import FeaturedLeft from "../components/frontpage/featured-left";
+import FeaturedRight from "../components/frontpage/featured-right";
 
-  // Deconstruct the props
+export default function servicesPage({ pageContent, globalContent }) {
   const {
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
     pageTitle,
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
     breadcrumbpath,
-    serviceLinks,
-    servicesPopulate: {service},
+    highLights: {
+      events,
+      bgColor: { bgcolor },
+    },
+    Feed,
   } = pageContent;
-        
 
-  console.log("Page: Tjenester", service);
-        // Return page content
-        
-        return (
-          <Layout globalContent={globalContent} pageTitle={pageTitle}>
-      <Hero heroTitle={heroTitle} heroDescription={heroDescription} heroButton={heroButton} heroImage={heroImage} breadcrumbpath={breadcrumbpath} />
-      
-      <section className="w-full bg-oculos-lightsage py-10">
-      <div className="grid gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 bg-transparent antialiased max-w-[960px] mx-auto">
-      {serviceLinks?.map((links, i) => (
-        <ServiceItemsMain key={i} links={links} />
-        ))}
+  const components = Feed?.map((component) => {
+    const ComponentType =
+      require(`../components/modules/${component.__typename}`).default;
+    return <ComponentType key={component.id} {...component} />;
+  });
 
-      </div>
-      
+  console.log("Page: Tjenester", bgcolor);
+
+  return (
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
+      <Hero
+        heroTitle={heroTitle}
+        heroDescription={heroDescription}
+        heroButton={heroButton}
+        heroImage={heroImage}
+        breadcrumbpath={breadcrumbpath}
+      />
+      <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
+        <div className="flex flex-col md:flex-row max-w-[960px] mx-5 lg:mx-auto justify-between">
+          {events?.data?.map((eventContent, i) => (
+            <FeaturedLeft key={i} eventContent={eventContent} />
+          ))}
+        </div>
       </section>
-      
-    
-        <ServicesPageLayout service={service} />
 
-      <div>
-
-
-      </div>
-    
-    
+      {components?.map((components, i) => {
+        return <section key={i}>{components}</section>;
+      })}
     </Layout>
   );
 }
-
 
 export async function getStaticProps() {
   const pageContent = await getServicesPageContent();

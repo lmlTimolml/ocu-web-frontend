@@ -1,38 +1,50 @@
-
-
+import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
-import { career } from "../../dummy-data";
-import CareerGrid from "../../components/career/career-grid";
-import client from "../../graphql/queries";
-import { GET_CONTACT_PAGE } from "../../graphql/queries";
+import { getCareerPageContent, getGlobalContent } from "../../lib/api";
+import { customColors } from "../../customdata";
 
+const background = customColors();
 
+export default function careerPage({pageContent, globalContent }) {
+  const {
+    pageTitle,
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    breadcrumbpath
+  } = pageContent;
 
-const careers = career();
+  const components = Feed?.map((component) => {
+    const ComponentType =
+    require(`../../components/modules/${component.__typename}`).default;
+    return <ComponentType key={component.id} {...component} />;
+  });
 
-const careerPage = () => {
+  console.log("Page: Karriere", pageContent);
+
   return (
-    <>
-      <Hero heading="Karriere" message="Vi hjelper kundene våre med å utnytte kraften i personalisert kommunikasjon" />
-      <section className="px-5 py-6 bg-oculos-piglet">
-      <CareerGrid info={careers} />
-      </section>
-    </>
+    <Layout globalContent={globalContent} pageTitle={pageTitle}>
+      <Hero
+        heroTitle={heroTitle}
+        heroDescription={heroDescription}
+        heroButton={heroButton}
+        heroImage={heroImage}
+      />
+      
+      {components?.map((components, i) => {
+        return <section key={i}>{components}</section>;
+      })}
+
+    </Layout>
   );
 }
 
-export default careerPage;
-
-
-
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: GET_CONTACT_PAGE,
-  });
+  const pageContent = await getCareerPageContent(); // fetches query
+  const globalContent = await getGlobalContent();
 
   return {
     props: {
-      column: data.contactPage.data.attributes.companyContactModule.companycontactinfo,
+      pageContent: pageContent.careerPage.data.attributes, // creates a const from toplevel query and serves it as prop
+      globalContent: globalContent.global.data.attributes,
     },
   };
 }

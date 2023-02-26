@@ -12,12 +12,14 @@ export default function servicesPage({ pageContent, globalContent }) {
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage },
     breadcrumbpath,
-    highLights: {
-      events,
+    servList: {
       bgColor: { bgcolor },
+      servItem,
     },
     Feed,
   } = pageContent;
+
+  const servLink = servItem[0].events.data;
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -25,7 +27,7 @@ export default function servicesPage({ pageContent, globalContent }) {
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Tjenester", bgcolor);
+  console.log("Page: Tjenester", servLink);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -36,9 +38,13 @@ export default function servicesPage({ pageContent, globalContent }) {
         heroImage={heroImage}
         breadcrumbpath={breadcrumbpath}
       />
-      <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-        <div className="flex flex-col md:flex-row max-w-[960px] mx-5 lg:mx-auto justify-between">
-          {events?.data?.map((eventContent, i) => (
+      <section
+        className="py-5"
+        style={{ backgroundColor: `${background[bgcolor]}` }}
+      >
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-[960px] mx-5 lg:mx-auto">
+        {/* <div className="flex flex-col md:flex-row max-w-[960px] mx-5 lg:mx-auto justify-between"> */}
+          {servLink?.map((eventContent, i) => (
             <FeaturedLeft key={i} eventContent={eventContent} />
           ))}
         </div>

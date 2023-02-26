@@ -27,8 +27,6 @@ export default function HomePage({ pageContent, globalContent }) {
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Home", bgcolor);
-
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero

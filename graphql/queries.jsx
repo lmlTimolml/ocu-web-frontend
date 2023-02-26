@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import { FEATURED_EVENT, FEATURED_NEWS, HERO_SECTION } from "./queryfragments";
 
 
 /* POSTS */
@@ -1900,7 +1899,7 @@ query ContactPage {
 
 
 /* Inspirasjonpage */
-const GET_INSPIRATION_PAGE = gql`
+export const GET_INSPIRATION_PAGE = gql`
   query {
     inspirationPage {
       data {
@@ -1930,7 +1929,7 @@ const GET_INSPIRATION_PAGE = gql`
   }
 `;
 
-export { GET_INSPIRATION_PAGE };
+
 
 /* Services Page */
 
@@ -1970,12 +1969,6 @@ query Query {
           }
           heroTitle
           heroDescription
-          heroButton {
-            id
-            label
-            url
-            linkText
-          }
         }
         breadcrumbpath {
           id
@@ -2363,38 +2356,3 @@ query Global {
 `;
 
 export { GET_GLOBALS };
-
-/* QUERY FRAGMENTS */
-
-/* Hero */
-
-export const FRAGMENT_TEST = gql`
-query HomePage {
-  ${HERO_SECTION}
-  ${FEATURED_EVENT}
-  ${FEATURED_NEWS}
-    homePage {
-      data {
-        id
-        attributes {
-          pageTitle
-          slug
-          heroSection {
-            ...heroSection
-          }
-          breadcrumbpath {
-            breadcrumb {
-              label
-              url
-            }
-          }
-          highLights {
-            ...eventData
-            ...newsData
-          }
-        }
-      }
-    }
-  }
-
-`;

@@ -5,8 +5,7 @@ import { customColors } from "../../customdata";
 
 const background = customColors();
 
-import FeaturedLeft from "../components/frontpage/featured-left";
-import FeaturedRight from "../components/frontpage/featured-right";
+import FeaturedLeft from "../../components/frontpage/featured-left";
 
 export default function servicesPage({ pageContent, globalContent }) {
   const {
@@ -22,7 +21,7 @@ export default function servicesPage({ pageContent, globalContent }) {
 
   const components = Feed?.map((component) => {
     const ComponentType =
-      require(`../components/modules/${component.__typename}`).default;
+      require(`../../components/modules/${component.__typename}`).default;
     return <ComponentType key={component.id} {...component} />;
   });
 

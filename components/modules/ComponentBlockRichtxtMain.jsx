@@ -1,6 +1,6 @@
 import { customColors } from "../../customdata";
-import dynamic from "next/dynamic";
 import React from "react";
+import dynamic from "next/dynamic";
 const ReactMarkdown= dynamic(() => import('react-markdown'),{ ssr: false })
 const background = customColors();
 

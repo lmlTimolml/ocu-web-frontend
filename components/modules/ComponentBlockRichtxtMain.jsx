@@ -6,7 +6,7 @@ const background = customColors();
 
 export default function RichTxtMain({heading, content, bgRichTxtMain:{bgcolor}
 }) {
-console.log(heading);
+
   return (
     
     <section style={{ backgroundColor: `${background[bgcolor]}`}}>

@@ -4,7 +4,6 @@ import { Fragment } from "react";
 export default function Breadcrumb({ children }) {
   const childrenArray = Children.toArray(children);
 
-  console.log(childrenArray);
 
   const childrenWtihSeparator = childrenArray.map((child, index) => {
     if (index !== childrenArray.length - 1) {
@@ -15,6 +14,7 @@ export default function Breadcrumb({ children }) {
         </Fragment>
       );
     }
+  
     return child
   });
 

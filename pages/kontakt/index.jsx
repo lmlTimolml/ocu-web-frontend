@@ -10,7 +10,7 @@ const background = customColors();
 export default function contactPage({ pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
     ContactInfo: {
       bgColor: { bgcolor },
@@ -18,8 +18,6 @@ export default function contactPage({ pageContent, globalContent }) {
     },
     Feed,
   } = pageContent;
-
-console.log(pageContent);
 
   const { companyemail, companyaddress, companyphone } = companydata();
 
@@ -29,8 +27,6 @@ console.log(pageContent);
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Contact", companycontactinfo[0].url);
-
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero
@@ -38,6 +34,7 @@ console.log(pageContent);
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
       />
       <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
         <div className="flex max-w-[960px] mx-5 lg:mx-auto justify-between">

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Breadcrumb from "./breadcrumbs";
 import BreadcrumbItem from "./breadcrumb-item";
 
-export default function Hero({ heroTitle, heroDescription, heroImage, breadcrumbpath }) {
+export default function Hero({ heroTitle, heroDescription, heroImage, alt, breadcrumbpath }) {
   
   /* Breadcrumbs from Strapi
 
@@ -14,6 +14,8 @@ export default function Hero({ heroTitle, heroDescription, heroImage, breadcrumb
   */
 
   /* Breadcrumbs */
+
+console.log("hero", alt);
 
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState();
@@ -46,7 +48,7 @@ export default function Hero({ heroTitle, heroDescription, heroImage, breadcrumb
           fill
           priority
           src={heroImage.data.attributes.url}
-          alt={heroImage.data.attributes.alternativeText}
+          alt={alt}
         />
         <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
         <div className="text-white z-[2] mx-5 lg:mx-auto min-w-3xl max-w-4xl">

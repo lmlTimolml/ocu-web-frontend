@@ -1,27 +1,17 @@
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
-import { getServicesPageContent, getGlobalContent } from "../../lib/api";
+import { getPersonvernPageContent, getGlobalContent } from "../../lib/api";
 import { customColors } from "../../customdata";
 
 const background = customColors();
 
-import FeaturedLeft from "../../components/frontpage/featured-left";
-
-export default function servicesPage({ pageContent, globalContent }) {
+export default function personvernPage({ pageContent, globalContent }) {
   const {
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
-    servList: {
-      bgColor: { bgcolor },
-      servItem,
-    },
     Feed,
   } = pageContent;
-
-  console.log("tjen", alt);
-
-  const servLink = servItem[0].events.data;
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -29,7 +19,7 @@ export default function servicesPage({ pageContent, globalContent }) {
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Tjenester", servLink);
+  console.log("Page: Personvern");
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -61,12 +51,12 @@ export default function servicesPage({ pageContent, globalContent }) {
 }
 
 export async function getStaticProps() {
-  const pageContent = await getServicesPageContent();
+  const pageContent = await getPersonvernPageContent();
   const globalContent = await getGlobalContent();
 
   return {
     props: {
-      pageContent: pageContent.servicesPage.data.attributes,
+      pageContent: pageContent.personvernPage.data.attributes,
       globalContent: globalContent.global.data.attributes,
     },
   };

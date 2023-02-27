@@ -11,7 +11,7 @@ import FeaturedRight from "../components/frontpage/featured-right";
 export default function HomePage({ pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
     highLights: {
       events,
@@ -34,6 +34,8 @@ export default function HomePage({ pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        pageTitle={pageTitle}
+        alt={alt}
         breadcrumbpath={breadcrumbpath}
       />
       <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>

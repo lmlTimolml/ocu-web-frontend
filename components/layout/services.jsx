@@ -3,8 +3,6 @@ export default function Services({ service }) {
 
   const { Feed } = service.data.attributes;
 
-  console.log("Page: servicefeed", Feed);
-
   const components = Feed?.map((component) => {
     const ComponentType =
       require(`../../components/modules/${component.__typename}`).default;

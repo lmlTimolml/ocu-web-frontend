@@ -10,7 +10,7 @@ const background = customColors();
 export default function Kundereiser({ pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
     servnav: {
       button,
@@ -19,8 +19,6 @@ export default function Kundereiser({ pageContent, globalContent }) {
     service,
   } = pageContent;
 
-  console.log("Page: strategi", bgcolor);
-
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero
@@ -28,6 +26,7 @@ export default function Kundereiser({ pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
       />
       <section className="py-5">
       <div className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>

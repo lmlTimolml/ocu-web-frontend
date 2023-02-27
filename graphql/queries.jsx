@@ -31,6 +31,7 @@ export const SERVICE_STRAT = gql`
             }
             heroTitle
             heroDescription
+            alt
           }
           breadcrumbpath {
             id
@@ -60,6 +61,7 @@ export const SERVICE_STRAT = gql`
                   ... on ComponentBlockContact {
                     id
                     heading
+                    alt
                     contmedia {
                       data {
                         id
@@ -518,6 +520,7 @@ export const SERVICE_MARTECH = gql`
             }
             heroTitle
             heroDescription
+            alt
           }
           breadcrumbpath {
             id
@@ -547,6 +550,7 @@ export const SERVICE_MARTECH = gql`
                   ... on ComponentBlockContact {
                     id
                     heading
+                    alt
                     contmedia {
                       data {
                         id
@@ -1005,6 +1009,7 @@ export const SERVICE_CLIENT = gql`
             }
             heroTitle
             heroDescription
+            alt
           }
           breadcrumbpath {
             id
@@ -1034,6 +1039,7 @@ export const SERVICE_CLIENT = gql`
                   ... on ComponentBlockContact {
                     id
                     heading
+                    alt
                     contmedia {
                       data {
                         id
@@ -1492,6 +1498,7 @@ export const SERVICE_ANALYTICS = gql`
             }
             heroTitle
             heroDescription
+            alt
           }
           breadcrumbpath {
             id
@@ -1521,6 +1528,7 @@ export const SERVICE_ANALYTICS = gql`
                   ... on ComponentBlockContact {
                     id
                     heading
+                    alt
                     contmedia {
                       data {
                         id
@@ -2065,6 +2073,7 @@ export const GET_FRONT_PAGE = gql`
             ... on ComponentBlockContact {
               id
               heading
+              alt
               contmedia {
                 data {
                   id
@@ -2560,6 +2569,7 @@ query ContactPage {
           ... on ComponentBlockContact {
             id
             heading
+            alt
             contmedia {
               data {
                 id
@@ -3081,6 +3091,7 @@ export const GET_SERVICES_PAGE = gql`
             ... on ComponentBlockContact {
               id
               heading
+              alt
               contmedia {
                 data {
                   id

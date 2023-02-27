@@ -25,8 +25,6 @@ export default function ComponentBlockQuestions({
     ssr: false,
   });
 
-  console.log(title);
-
   return (
     <aside
       className="py-5 my-5"

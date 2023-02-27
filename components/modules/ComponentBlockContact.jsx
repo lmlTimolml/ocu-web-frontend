@@ -22,7 +22,7 @@ export default function ContactBlock({
 
   return (
     <section
-      className="py-5 my-5" style={{ backgroundColor: `${background[bgmodule]}`}}
+      className="py-5 my-4" style={{ backgroundColor: `${background[bgmodule]}`}}
     >
       <div className="max-w-[960px] mx-5 lg:mx-auto">
         {url && <Image height={540} width={960} src={url} alt={alt} />}

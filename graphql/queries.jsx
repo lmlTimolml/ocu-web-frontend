@@ -1,6 +1,5 @@
 import { gql } from "@apollo/client";
 
-
 /* POSTS */
 
 /* ARTICLES */
@@ -10,936 +9,2293 @@ import { gql } from "@apollo/client";
 /* SERVICES */
 /* Strategi og Rådgivning */
 export const SERVICE_STRAT = gql`
-query StrategiRadgivning {
-  serviceSubPageOne {
-    data {
-      id
-      attributes {
-        pageTitle
-        slug
-        heroSection {
-          id
-          heroImage {
+  query StrategiRadgivning {
+    serviceSubPageOne {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  alternativeText
+                  width
+                  height
+                  url
+                }
+              }
+            }
+            heroTitle
+            heroDescription
+          }
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          servnav {
+            id
+            button {
+              id
+              label
+              link
+              txt
+              style
+            }
+            bgColor {
+              id
+              bgcolor
+            }
+          }
+          service {
             data {
               id
               attributes {
-                alternativeText
-                width
-                height
-                url
-              }
-            }
-          }
-          heroTitle
-          heroDescription
-        }
-        breadcrumbpath {
-          id
-          breadCrumb
-        }
-        servnav {
-          id
-          button {
-            id
-            label
-            link
-            txt
-            style
-          }
-          bgColor {
-            id
-            bgcolor
-          }
-        }
-        service {
-    data {
-      id
-      attributes {
-        title
-        slug
-        Feed {
-          ... on ComponentBlockContact {
-            id
-            heading
-            contmedia {
-              data {
-                id
-                attributes {
-                  alternativeText
-                  caption
-                  width
-                  height
-                  url
-                }
-              }
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-            bgContact {
-              id
-              bgcolor
-            }
-            bgModule {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockHeadMain {
-            id
-            heading
-            content
-            bgHeadMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockQuote {
-            id
-            quote
-            source
-            bgQuote {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockRichtxtMain {
-            id
-            content
-            heading
-            bgRichTxtMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockRichtxt {
-            id
-            content
-            heading
-            bgRichTxt {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockServMain {
-            id
-            heading
-            content
-          }
-          ... on ComponentBlockTxtLlr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtLsr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRll {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRsl {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentSharedSeo {
-            id
-            metaSocial {
-              id
-              socialNetwork
-              title
-              description
-              image {
-                data {
-                  attributes {
-                    alternativeText
-                    caption
-                    width
-                    height
-                    url
-                  }
-                }
-              }
-            }
-            metaTitle
-            metaDescription
-            metaImage {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            keywords
-            metaRobots
-            structuredData
-            metaViewport
-            canonicalURL
-          }
-          ... on ComponentSharedMedia {
-            id
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            caption
-            alt
-            bgMedia {
-              bgcolor
-            }
-          }
-          ... on Error {
-            code
-            message
-          }
-          ... on ComponentFormForm {
-            id
-            form {
-              data {
-                id
-                attributes {
-                  FormName
-                  FormDescription
-                  bgModule {
-                    bgcolor
-                  }
-                  bgForm {
-                    bgcolor
-                  }
-                  slug
-                  Formfields {
-                    ... on ComponentFormInput {
-                      fieldID
-                      fieldname
-                      id
-                      placeholder
+                title
+                slug
+                Feed {
+                  ... on ComponentBlockContact {
+                    id
+                    heading
+                    contmedia {
+                      data {
+                        id
+                        attributes {
+                          alternativeText
+                          caption
+                          width
+                          height
+                          url
+                        }
+                      }
                     }
-                    ... on ComponentFormFirstname {
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormEmail {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormLastname {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormCheck {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormPhone {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormSwitch {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on Error {
-                      code
-                      message
-                    }
-                    ... on ComponentSharedButton {
+                    button {
                       id
                       label
                       link
                       txt
                       style
                     }
-                    ... on ComponentFormTextfield {
+                    bgContact {
                       id
-                      disclaimer
+                      bgcolor
+                    }
+                    bgModule {
+                      id
+                      bgcolor
                     }
                   }
-                  createdAt
-                  updatedAt
-                  publishedAt
-                }
-              }
-            }
-          }
-        }
-        createdAt
-        updatedAt
-        publishedAt
-      }
-    }
-    }
-  }
-}
-}
-}
-`
-;
-
-/* Services feed */
-export const SERVICEFEED = gql`
-query Services {
-  services {
-    data {
-      id
-      attributes {
-        title
-        slug
-        Feed {
-          ... on ComponentBlockContact {
-            id
-            heading
-            contmedia {
-              data {
-                id
-                attributes {
-                  alternativeText
-                  caption
-                  width
-                  height
-                  url
-                }
-              }
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-            bgContact {
-              id
-              bgcolor
-            }
-            bgModule {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockHeadMain {
-            id
-            heading
-            content
-            bgHeadMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockQuote {
-            id
-            quote
-            source
-            bgQuote {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockRichtxtMain {
-            id
-            content
-            heading
-            bgRichTxtMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockRichtxt {
-            id
-            content
-            heading
-            bgRichTxt {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockServMain {
-            id
-            heading
-            content
-          }
-          ... on ComponentBlockTxtLlr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtLsr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRll {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRsl {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentSharedSeo {
-            id
-            metaSocial {
-              id
-              socialNetwork
-              title
-              description
-              image {
-                data {
-                  attributes {
-                    alternativeText
-                    caption
-                    width
-                    height
-                    url
-                  }
-                }
-              }
-            }
-            metaTitle
-            metaDescription
-            metaImage {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            keywords
-            metaRobots
-            structuredData
-            metaViewport
-            canonicalURL
-          }
-          ... on ComponentSharedMedia {
-            id
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            caption
-            alt
-            bgMedia {
-              bgcolor
-            }
-          }
-          ... on Error {
-            code
-            message
-          }
-          ... on ComponentFormForm {
-            id
-            form {
-              data {
-                id
-                attributes {
-                  FormName
-                  FormDescription
-                  bgModule {
-                    bgcolor
-                  }
-                  bgForm {
-                    bgcolor
-                  }
-                  slug
-                  Formfields {
-                    ... on ComponentFormInput {
-                      fieldID
-                      fieldname
+                  ... on ComponentBlockHeadMain {
+                    id
+                    heading
+                    content
+                    bgHeadMain {
                       id
-                      placeholder
+                      bgcolor
                     }
-                    ... on ComponentFormFirstname {
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormEmail {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormLastname {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormCheck {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormPhone {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormSwitch {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on Error {
-                      code
-                      message
-                    }
-                    ... on ComponentSharedButton {
+                    button {
                       id
                       label
                       link
                       txt
                       style
                     }
-                    ... on ComponentFormTextfield {
+                  }
+                  ... on ComponentBlockQuote {
+                    id
+                    quote
+                    source
+                    bgQuote {
                       id
-                      disclaimer
+                      bgcolor
                     }
                   }
-                  createdAt
-                  updatedAt
-                  publishedAt
+                  ... on ComponentBlockRichtxtMain {
+                    id
+                    content
+                    heading
+                    bgRichTxtMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockRichtxt {
+                    id
+                    content
+                    heading
+                    bgRichTxt {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockServMain {
+                    id
+                    heading
+                    content
+                  }
+                  ... on ComponentBlockTxtLlr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtLsr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRll {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRsl {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentSharedSeo {
+                    id
+                    metaSocial {
+                      id
+                      socialNetwork
+                      title
+                      description
+                      image {
+                        data {
+                          attributes {
+                            alternativeText
+                            caption
+                            width
+                            height
+                            url
+                          }
+                        }
+                      }
+                    }
+                    metaTitle
+                    metaDescription
+                    metaImage {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    keywords
+                    metaRobots
+                    structuredData
+                    metaViewport
+                    canonicalURL
+                  }
+                  ... on ComponentSharedMedia {
+                    id
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    caption
+                    alt
+                    bgMedia {
+                      bgcolor
+                    }
+                  }
+                  ... on Error {
+                    code
+                    message
+                  }
+                  ... on ComponentFormForm {
+                    id
+                    form {
+                      data {
+                        id
+                        attributes {
+                          FormName
+                          FormDescription
+                          bgModule {
+                            bgcolor
+                          }
+                          bgForm {
+                            bgcolor
+                          }
+                          slug
+                          Formfields {
+                            ... on ComponentFormInput {
+                              fieldID
+                              fieldname
+                              id
+                              placeholder
+                            }
+                            ... on ComponentFormFirstname {
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormEmail {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormLastname {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormCheck {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormPhone {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormSwitch {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on Error {
+                              code
+                              message
+                            }
+                            ... on ComponentSharedButton {
+                              id
+                              label
+                              link
+                              txt
+                              style
+                            }
+                            ... on ComponentFormTextfield {
+                              id
+                              disclaimer
+                            }
+                          }
+                          createdAt
+                          updatedAt
+                          publishedAt
+                        }
+                      }
+                    }
+                  }
+                  ... on ComponentBlockQuest {
+                    id
+                    heading
+                    content
+                    name
+                    title
+                    phone
+                    bgInfo {
+                      bgcolor
+                    }
+                    bgModule {
+                      bgcolor
+                    }
+                    img {
+                      data {
+                        attributes {
+                          alternativeText
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    questlink {
+                      label
+                      txt
+                      link
+                      style
+                    }
+                  }
                 }
+                createdAt
+                updatedAt
+                publishedAt
               }
             }
           }
         }
-        createdAt
-        updatedAt
-        publishedAt
-      }
-    }
-    meta {
-      pagination {
-        total
-        page
-        pageSize
-        pageCount
       }
     }
   }
-}
-`
-;
+`;
 
+/* Martech */
+export const SERVICE_MARTECH = gql`
+  query Martech {
+    serviceSubPageTwo {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  alternativeText
+                  width
+                  height
+                  url
+                }
+              }
+            }
+            heroTitle
+            heroDescription
+          }
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          servnav {
+            id
+            button {
+              id
+              label
+              link
+              txt
+              style
+            }
+            bgColor {
+              id
+              bgcolor
+            }
+          }
+          service {
+            data {
+              id
+              attributes {
+                title
+                slug
+                Feed {
+                  ... on ComponentBlockContact {
+                    id
+                    heading
+                    contmedia {
+                      data {
+                        id
+                        attributes {
+                          alternativeText
+                          caption
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                    bgContact {
+                      id
+                      bgcolor
+                    }
+                    bgModule {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockHeadMain {
+                    id
+                    heading
+                    content
+                    bgHeadMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockQuote {
+                    id
+                    quote
+                    source
+                    bgQuote {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockRichtxtMain {
+                    id
+                    content
+                    heading
+                    bgRichTxtMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockRichtxt {
+                    id
+                    content
+                    heading
+                    bgRichTxt {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockServMain {
+                    id
+                    heading
+                    content
+                  }
+                  ... on ComponentBlockTxtLlr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtLsr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRll {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRsl {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentSharedSeo {
+                    id
+                    metaSocial {
+                      id
+                      socialNetwork
+                      title
+                      description
+                      image {
+                        data {
+                          attributes {
+                            alternativeText
+                            caption
+                            width
+                            height
+                            url
+                          }
+                        }
+                      }
+                    }
+                    metaTitle
+                    metaDescription
+                    metaImage {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    keywords
+                    metaRobots
+                    structuredData
+                    metaViewport
+                    canonicalURL
+                  }
+                  ... on ComponentSharedMedia {
+                    id
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    caption
+                    alt
+                    bgMedia {
+                      bgcolor
+                    }
+                  }
+                  ... on Error {
+                    code
+                    message
+                  }
+                  ... on ComponentFormForm {
+                    id
+                    form {
+                      data {
+                        id
+                        attributes {
+                          FormName
+                          FormDescription
+                          bgModule {
+                            bgcolor
+                          }
+                          bgForm {
+                            bgcolor
+                          }
+                          slug
+                          Formfields {
+                            ... on ComponentFormInput {
+                              fieldID
+                              fieldname
+                              id
+                              placeholder
+                            }
+                            ... on ComponentFormFirstname {
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormEmail {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormLastname {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormCheck {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormPhone {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormSwitch {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on Error {
+                              code
+                              message
+                            }
+                            ... on ComponentSharedButton {
+                              id
+                              label
+                              link
+                              txt
+                              style
+                            }
+                            ... on ComponentFormTextfield {
+                              id
+                              disclaimer
+                            }
+                          }
+                          createdAt
+                          updatedAt
+                          publishedAt
+                        }
+                      }
+                    }
+                  }
+                  ... on ComponentBlockQuest {
+                    id
+                    heading
+                    content
+                    name
+                    title
+                    phone
+                    bgInfo {
+                      bgcolor
+                    }
+                    bgModule {
+                      bgcolor
+                    }
+                    img {
+                      data {
+                        attributes {
+                          alternativeText
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    questlink {
+                      label
+                      txt
+                      link
+                      style
+                    }
+                  }
+                }
+                createdAt
+                updatedAt
+                publishedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
+/* Kundereiser */
+export const SERVICE_CLIENT = gql`
+  query Kundereiser {
+    serviceSubPageThree {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  alternativeText
+                  width
+                  height
+                  url
+                }
+              }
+            }
+            heroTitle
+            heroDescription
+          }
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          servnav {
+            id
+            button {
+              id
+              label
+              link
+              txt
+              style
+            }
+            bgColor {
+              id
+              bgcolor
+            }
+          }
+          service {
+            data {
+              id
+              attributes {
+                title
+                slug
+                Feed {
+                  ... on ComponentBlockContact {
+                    id
+                    heading
+                    contmedia {
+                      data {
+                        id
+                        attributes {
+                          alternativeText
+                          caption
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                    bgContact {
+                      id
+                      bgcolor
+                    }
+                    bgModule {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockHeadMain {
+                    id
+                    heading
+                    content
+                    bgHeadMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockQuote {
+                    id
+                    quote
+                    source
+                    bgQuote {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockRichtxtMain {
+                    id
+                    content
+                    heading
+                    bgRichTxtMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockRichtxt {
+                    id
+                    content
+                    heading
+                    bgRichTxt {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockServMain {
+                    id
+                    heading
+                    content
+                  }
+                  ... on ComponentBlockTxtLlr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtLsr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRll {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRsl {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentSharedSeo {
+                    id
+                    metaSocial {
+                      id
+                      socialNetwork
+                      title
+                      description
+                      image {
+                        data {
+                          attributes {
+                            alternativeText
+                            caption
+                            width
+                            height
+                            url
+                          }
+                        }
+                      }
+                    }
+                    metaTitle
+                    metaDescription
+                    metaImage {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    keywords
+                    metaRobots
+                    structuredData
+                    metaViewport
+                    canonicalURL
+                  }
+                  ... on ComponentSharedMedia {
+                    id
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    caption
+                    alt
+                    bgMedia {
+                      bgcolor
+                    }
+                  }
+                  ... on Error {
+                    code
+                    message
+                  }
+                  ... on ComponentFormForm {
+                    id
+                    form {
+                      data {
+                        id
+                        attributes {
+                          FormName
+                          FormDescription
+                          bgModule {
+                            bgcolor
+                          }
+                          bgForm {
+                            bgcolor
+                          }
+                          slug
+                          Formfields {
+                            ... on ComponentFormInput {
+                              fieldID
+                              fieldname
+                              id
+                              placeholder
+                            }
+                            ... on ComponentFormFirstname {
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormEmail {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormLastname {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormCheck {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormPhone {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormSwitch {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on Error {
+                              code
+                              message
+                            }
+                            ... on ComponentSharedButton {
+                              id
+                              label
+                              link
+                              txt
+                              style
+                            }
+                            ... on ComponentFormTextfield {
+                              id
+                              disclaimer
+                            }
+                          }
+                          createdAt
+                          updatedAt
+                          publishedAt
+                        }
+                      }
+                    }
+                  }
+                  ... on ComponentBlockQuest {
+                    id
+                    heading
+                    content
+                    name
+                    title
+                    phone
+                    bgInfo {
+                      bgcolor
+                    }
+                    bgModule {
+                      bgcolor
+                    }
+                    img {
+                      data {
+                        attributes {
+                          alternativeText
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    questlink {
+                      label
+                      txt
+                      link
+                      style
+                    }
+                  }
+                }
+                createdAt
+                updatedAt
+                publishedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+/* Analyse og Innsikt */
+export const SERVICE_ANALYTICS = gql`
+  query AnalyseInnsikt {
+    serviceSubPageFour {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  alternativeText
+                  width
+                  height
+                  url
+                }
+              }
+            }
+            heroTitle
+            heroDescription
+          }
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          servnav {
+            id
+            button {
+              id
+              label
+              link
+              txt
+              style
+            }
+            bgColor {
+              id
+              bgcolor
+            }
+          }
+          service {
+            data {
+              id
+              attributes {
+                title
+                slug
+                Feed {
+                  ... on ComponentBlockContact {
+                    id
+                    heading
+                    contmedia {
+                      data {
+                        id
+                        attributes {
+                          alternativeText
+                          caption
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                    bgContact {
+                      id
+                      bgcolor
+                    }
+                    bgModule {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockHeadMain {
+                    id
+                    heading
+                    content
+                    bgHeadMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockQuote {
+                    id
+                    quote
+                    source
+                    bgQuote {
+                      id
+                      bgcolor
+                    }
+                  }
+                  ... on ComponentBlockRichtxtMain {
+                    id
+                    content
+                    heading
+                    bgRichTxtMain {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockRichtxt {
+                    id
+                    content
+                    heading
+                    bgRichTxt {
+                      id
+                      bgcolor
+                    }
+                    button {
+                      id
+                      label
+                      link
+                      txt
+                      style
+                    }
+                  }
+                  ... on ComponentBlockServMain {
+                    id
+                    heading
+                    content
+                  }
+                  ... on ComponentBlockTxtLlr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtLsr {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRll {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentBlockTxtRsl {
+                    id
+                    heading
+                    content
+                    bgColor {
+                      id
+                      bgcolor
+                    }
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                  }
+                  ... on ComponentSharedSeo {
+                    id
+                    metaSocial {
+                      id
+                      socialNetwork
+                      title
+                      description
+                      image {
+                        data {
+                          attributes {
+                            alternativeText
+                            caption
+                            width
+                            height
+                            url
+                          }
+                        }
+                      }
+                    }
+                    metaTitle
+                    metaDescription
+                    metaImage {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    keywords
+                    metaRobots
+                    structuredData
+                    metaViewport
+                    canonicalURL
+                  }
+                  ... on ComponentSharedMedia {
+                    id
+                    media {
+                      data {
+                        id
+                        attributes {
+                          name
+                          alternativeText
+                          caption
+                          width
+                          height
+                          formats
+                          hash
+                          ext
+                          mime
+                          size
+                          url
+                          previewUrl
+                          provider
+                          provider_metadata
+                          createdAt
+                          updatedAt
+                        }
+                      }
+                    }
+                    caption
+                    alt
+                    bgMedia {
+                      bgcolor
+                    }
+                  }
+                  ... on Error {
+                    code
+                    message
+                  }
+                  ... on ComponentFormForm {
+                    id
+                    form {
+                      data {
+                        id
+                        attributes {
+                          FormName
+                          FormDescription
+                          bgModule {
+                            bgcolor
+                          }
+                          bgForm {
+                            bgcolor
+                          }
+                          slug
+                          Formfields {
+                            ... on ComponentFormInput {
+                              fieldID
+                              fieldname
+                              id
+                              placeholder
+                            }
+                            ... on ComponentFormFirstname {
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormEmail {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormLastname {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormCheck {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormPhone {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on ComponentFormSwitch {
+                              id
+                              placeholder
+                              fieldname
+                              required
+                            }
+                            ... on Error {
+                              code
+                              message
+                            }
+                            ... on ComponentSharedButton {
+                              id
+                              label
+                              link
+                              txt
+                              style
+                            }
+                            ... on ComponentFormTextfield {
+                              id
+                              disclaimer
+                            }
+                          }
+                          createdAt
+                          updatedAt
+                          publishedAt
+                        }
+                      }
+                    }
+                  }
+                  ... on ComponentBlockQuest {
+                    id
+                    heading
+                    content
+                    name
+                    title
+                    phone
+                    bgInfo {
+                      bgcolor
+                    }
+                    bgModule {
+                      bgcolor
+                    }
+                    img {
+                      data {
+                        attributes {
+                          alternativeText
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    questlink {
+                      label
+                      txt
+                      link
+                      style
+                    }
+                  }
+                }
+                createdAt
+                updatedAt
+                publishedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 /* FULL PAGES */
 
 /* Frontpage */
 export const GET_FRONT_PAGE = gql`
-query HomePage {
-  homePage {
-    data {
-      id
-      attributes {
-        pageTitle
-        slug
-        heroSection {
-          id
-          heroImage {
-            data {
-              id
-              attributes {
-                name
-                alternativeText
-                caption
-                width
-                height
-                formats
-                hash
-                ext
-                mime
-                size
-                url
-                previewUrl
-                provider
-                provider_metadata
-                createdAt
-                updatedAt
+  query HomePage {
+    homePage {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  width
+                  height
+                  url
+                }
               }
             }
+            heroTitle
+            heroDescription
+            alt
           }
-          heroTitle
-          heroDescription
-        }
-        breadcrumbpath {
-          id
-          breadCrumb
-        }
-        highLights {
-          id
-          articles {
-            data {
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          highLights {
+            id
+            articles {
+              data {
+                id
+                attributes {
+                  title
+                  description
+                  image {
+                    data {
+                      attributes {
+                        alternativeText
+                        caption
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  slug
+                  isFeatured
+                  button {
+                    label
+                    link
+                    txt
+                    style
+                  }
+                  bgArticle {
+                    bgcolor
+                  }
+                  createdAt
+                  updatedAt
+                  publishedAt
+                }
+              }
+            }
+            events {
+              data {
+                id
+                attributes {
+                  title
+                  description
+                  logo {
+                    data {
+                      attributes {
+                        alternativeText
+                        caption
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  slug
+                  isFeatured
+                  button {
+                    label
+                    link
+                    txt
+                    style
+                  }
+                  bgEvent {
+                    bgcolor
+                  }
+                  createdAt
+                  updatedAt
+                  publishedAt
+                }
+              }
+            }
+            bgColor {
               id
-              attributes {
+              bgcolor
+            }
+          }
+          Feed {
+            ... on ComponentBlockContact {
+              id
+              heading
+              contmedia {
+                data {
+                  id
+                  attributes {
+                    alternativeText
+                    caption
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+              bgContact {
+                id
+                bgcolor
+              }
+              bgModule {
+                id
+                bgcolor
+              }
+            }
+            ... on ComponentBlockHeadMain {
+              id
+              heading
+              content
+              bgHeadMain {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockQuote {
+              id
+              quote
+              source
+              bgQuote {
+                id
+                bgcolor
+              }
+            }
+            ... on ComponentBlockRichtxtMain {
+              id
+              content
+              heading
+              bgRichTxtMain {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockRichtxt {
+              id
+              content
+              heading
+              bgRichTxt {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockServMain {
+              id
+              heading
+              content
+            }
+            ... on ComponentBlockTxtLlr {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtLsr {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtRll {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtRsl {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentSharedSeo {
+              id
+              metaSocial {
+                id
+                socialNetwork
                 title
                 description
                 image {
@@ -953,466 +2309,187 @@ query HomePage {
                     }
                   }
                 }
-                slug
-                isFeatured
-                button {
-                  label
-                  link
-                  txt
-                  style
-                }
-                bgArticle {
-                  bgcolor
-                }
-                createdAt
-                updatedAt
-                publishedAt
               }
-            }
-          }
-          events {
-            data {
-              id
-              attributes {
-                title
-                description
-                logo {
-                  data {
-                    attributes {
-                      alternativeText
-                      caption
-                      width
-                      height
-                      url
-                    }
-                  }
-                }
-                slug
-                isFeatured
-                button {
-                  label
-                  link
-                  txt
-                  style
-                }
-                bgEvent {
-                  bgcolor
-                }
-                createdAt
-                updatedAt
-                publishedAt
-              }
-            }
-          }
-          bgColor {
-            id
-            bgcolor
-          }
-        }
-        Feed {
-          ... on ComponentBlockContact {
-            id
-            heading
-            contmedia {
-              data {
-                id
-                attributes {
-                  alternativeText
-                  caption
-                  width
-                  height
-                  url
-                }
-              }
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-            bgContact {
-              id
-              bgcolor
-            }
-            bgModule {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockHeadMain {
-            id
-            heading
-            content
-            bgHeadMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockQuote {
-            id
-            quote
-            source
-            bgQuote {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockRichtxtMain {
-            id
-            content
-            heading
-            bgRichTxtMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockRichtxt {
-            id
-            content
-            heading
-            bgRichTxt {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockServMain {
-            id
-            heading
-            content
-          }
-          ... on ComponentBlockTxtLlr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtLsr {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRll {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRsl {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentSharedSeo {
-            id
-            metaSocial {
-              id
-              socialNetwork
-              title
-              description
-              image {
+              metaTitle
+              metaDescription
+              metaImage {
                 data {
+                  id
                   attributes {
+                    name
                     alternativeText
                     caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              keywords
+              metaRobots
+              structuredData
+              metaViewport
+              canonicalURL
+            }
+            ... on ComponentSharedMedia {
+              id
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              caption
+              alt
+              bgMedia {
+                bgcolor
+              }
+            }
+            ... on Error {
+              code
+              message
+            }
+            ... on ComponentFormForm {
+              id
+              form {
+                data {
+                  id
+                  attributes {
+                    FormName
+                    FormDescription
+                    bgModule {
+                      bgcolor
+                    }
+                    bgForm {
+                      bgcolor
+                    }
+                    slug
+                    Formfields {
+                      ... on ComponentFormInput {
+                        fieldID
+                        fieldname
+                        id
+                        placeholder
+                      }
+                      ... on ComponentFormFirstname {
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormEmail {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormLastname {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormCheck {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormPhone {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormSwitch {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on Error {
+                        code
+                        message
+                      }
+                      ... on ComponentSharedButton {
+                        id
+                        label
+                        link
+                        txt
+                        style
+                      }
+                      ... on ComponentFormTextfield {
+                        id
+                        disclaimer
+                      }
+                    }
+                    createdAt
+                    updatedAt
+                    publishedAt
+                  }
+                }
+              }
+            }
+            ... on ComponentBlockQuest {
+              id
+              heading
+              content
+              bgInfo {
+                bgcolor
+              }
+              bgModule {
+                bgcolor
+              }
+              img {
+                data {
+                  attributes {
                     width
                     height
                     url
                   }
                 }
               }
-            }
-            metaTitle
-            metaDescription
-            metaImage {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            keywords
-            metaRobots
-            structuredData
-            metaViewport
-            canonicalURL
-          }
-          ... on ComponentSharedMedia {
-            id
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            caption
-            alt
-            bgMedia {
-              bgcolor
-            }
-          }
-          ... on Error {
-            code
-            message
-          }
-          ... on ComponentFormForm {
-            id
-            form {
-              data {
-                id
-                attributes {
-                  FormName
-                  FormDescription
-                  bgModule {
-                    bgcolor
-                  }
-                  bgForm {
-                    bgcolor
-                  }
-                  slug
-                  Formfields {
-                    ... on ComponentFormInput {
-                      fieldID
-                      fieldname
-                      id
-                      placeholder
-                    }
-                    ... on ComponentFormFirstname {
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormEmail {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormLastname {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormCheck {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormPhone {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormSwitch {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on Error {
-                      code
-                      message
-                    }
-                    ... on ComponentSharedButton {
-                      id
-                      label
-                      link
-                      txt
-                      style
-                    }
-                    ... on ComponentFormTextfield {
-                      id
-                      disclaimer
-                    }
-                  }
-                  createdAt
-                  updatedAt
-                  publishedAt
-                }
+              questlink {
+                label
+                txt
+                link
+                style
               }
             }
           }
+          createdAt
+          updatedAt
+          publishedAt
         }
-        createdAt
-        updatedAt
-        publishedAt
       }
-      
     }
   }
-}
 `;
 
 /* Contactpage */
@@ -1430,27 +2507,15 @@ query ContactPage {
             data {
               id
               attributes {
-                name
-                alternativeText
-                caption
                 width
                 height
-                formats
-                hash
-                ext
-                mime
-                size
                 url
-                previewUrl
-                provider
-                provider_metadata
-                createdAt
-                updatedAt
               }
             }
           }
           heroTitle
           heroDescription
+          alt
         }
         breadcrumbpath {
           id
@@ -1931,54 +2996,325 @@ export const GET_INSPIRATION_PAGE = gql`
 /* Services Page */
 
 export const GET_SERVICES_PAGE = gql`
-query servicesPage {
-  servicesPage {
-    data {
-      id
-      attributes {
-        pageTitle
-        slug
-        heroSection {
-          id
-          heroImage {
-            data {
-              id
-              attributes {
-                name
-                alternativeText
-                caption
-                width
-                height
-                formats
-                hash
-                ext
-                mime
-                size
-                url
-                previewUrl
-                provider
-                provider_metadata
-                createdAt
-                updatedAt
+  query servicesPage {
+    servicesPage {
+      data {
+        id
+        attributes {
+          pageTitle
+          slug
+          heroSection {
+            id
+            heroImage {
+              data {
+                id
+                attributes {
+                  name
+                  alternativeText
+                  caption
+                  width
+                  height
+                  formats
+                  hash
+                  ext
+                  mime
+                  size
+                  url
+                  previewUrl
+                  provider
+                  provider_metadata
+                  createdAt
+                  updatedAt
+                }
               }
             }
+            heroTitle
+            heroDescription
           }
-          heroTitle
-          heroDescription
-        }
-        breadcrumbpath {
-          id
-          breadCrumb
-        }
-        servList {
-          servItem{
-          events {
-            data {
+          breadcrumbpath {
+            id
+            breadCrumb
+          }
+          servList {
+            servItem {
+              events {
+                data {
+                  id
+                  attributes {
+                    title
+                    description
+                    logo {
+                      data {
+                        attributes {
+                          alternativeText
+                          caption
+                          width
+                          height
+                          url
+                        }
+                      }
+                    }
+                    slug
+                    isFeatured
+                    button {
+                      label
+                      link
+                      txt
+                      style
+                    }
+                    bgEvent {
+                      bgcolor
+                    }
+                    createdAt
+                    updatedAt
+                    publishedAt
+                  }
+                }
+              }
+            }
+            bgColor {
               id
-              attributes {
+              bgcolor
+            }
+          }
+          Feed {
+            ... on ComponentBlockContact {
+              id
+              heading
+              contmedia {
+                data {
+                  id
+                  attributes {
+                    alternativeText
+                    caption
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+              bgContact {
+                id
+                bgcolor
+              }
+              bgModule {
+                id
+                bgcolor
+              }
+            }
+            ... on ComponentBlockHeadMain {
+              id
+              heading
+              content
+              bgHeadMain {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockQuote {
+              id
+              quote
+              source
+              bgQuote {
+                id
+                bgcolor
+              }
+            }
+            ... on ComponentBlockRichtxtMain {
+              id
+              content
+              heading
+              bgRichTxtMain {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockRichtxt {
+              id
+              content
+              heading
+              bgRichTxt {
+                id
+                bgcolor
+              }
+              button {
+                id
+                label
+                link
+                txt
+                style
+              }
+            }
+            ... on ComponentBlockServMain {
+              id
+              heading
+              content
+            }
+            ... on ComponentBlockTxtLlr {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtLsr {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtRll {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentBlockTxtRsl {
+              id
+              heading
+              content
+              bgColor {
+                id
+                bgcolor
+              }
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
+                }
+              }
+              alt
+              caption
+            }
+            ... on ComponentSharedSeo {
+              id
+              metaSocial {
+                id
+                socialNetwork
                 title
                 description
-                logo {
+                image {
                   data {
                     attributes {
                       alternativeText
@@ -1989,507 +3325,235 @@ query servicesPage {
                     }
                   }
                 }
-                slug
-                isFeatured
-                button {
-                  label
-                  link
-                  txt
-                  style
+              }
+              metaTitle
+              metaDescription
+              metaImage {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
                 }
-                bgEvent {
-                  bgcolor
+              }
+              keywords
+              metaRobots
+              structuredData
+              metaViewport
+              canonicalURL
+            }
+            ... on ComponentSharedMedia {
+              id
+              media {
+                data {
+                  id
+                  attributes {
+                    name
+                    alternativeText
+                    caption
+                    width
+                    height
+                    formats
+                    hash
+                    ext
+                    mime
+                    size
+                    url
+                    previewUrl
+                    provider
+                    provider_metadata
+                    createdAt
+                    updatedAt
+                  }
                 }
-                createdAt
-                updatedAt
-                publishedAt
+              }
+              caption
+              alt
+              bgMedia {
+                bgcolor
+              }
+            }
+            ... on Error {
+              code
+              message
+            }
+            ... on ComponentFormForm {
+              id
+              form {
+                data {
+                  id
+                  attributes {
+                    FormName
+                    FormDescription
+                    bgModule {
+                      bgcolor
+                    }
+                    bgForm {
+                      bgcolor
+                    }
+                    slug
+                    Formfields {
+                      ... on ComponentFormInput {
+                        fieldID
+                        fieldname
+                        id
+                        placeholder
+                      }
+                      ... on ComponentFormFirstname {
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormEmail {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormLastname {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormCheck {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormPhone {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on ComponentFormSwitch {
+                        id
+                        placeholder
+                        fieldname
+                        required
+                      }
+                      ... on Error {
+                        code
+                        message
+                      }
+                      ... on ComponentSharedButton {
+                        id
+                        label
+                        link
+                        txt
+                        style
+                      }
+                      ... on ComponentFormTextfield {
+                        id
+                        disclaimer
+                      }
+                    }
+                    createdAt
+                    updatedAt
+                    publishedAt
+                  }
+                }
               }
             }
           }
+          createdAt
+          updatedAt
+          publishedAt
         }
-          bgColor {
+      }
+    }
+  }
+`;
+
+/* GLOBALS */
+
+export const GET_GLOBALS = gql`
+  query Global {
+    global {
+      data {
+        id
+        attributes {
+          navigation {
             id
-            bgcolor
-          }
-        }
-        Feed {
-          ... on ComponentBlockContact {
-            id
-            heading
-            contmedia {
+            companylogo {
               data {
                 id
                 attributes {
                   alternativeText
-                  caption
                   width
                   height
                   url
                 }
               }
             }
-            button {
+            navlink {
               id
               label
-              link
+              url
               txt
               style
             }
-            bgContact {
-              id
-              bgcolor
-            }
-            bgModule {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockHeadMain {
-            id
-            heading
-            content
-            bgHeadMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockQuote {
-            id
-            quote
-            source
-            bgQuote {
-              id
-              bgcolor
-            }
-          }
-          ... on ComponentBlockRichtxtMain {
-            id
-            content
-            heading
-            bgRichTxtMain {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockRichtxt {
-            id
-            content
-            heading
-            bgRichTxt {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-          }
-          ... on ComponentBlockServMain {
-            id
-            heading
-            content
-          }
-          ... on ComponentBlockTxtLlr {
-            id
-            heading
-            content
             bgColor {
-              id
               bgcolor
             }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
           }
-          ... on ComponentBlockTxtLsr {
+          footer {
             id
-            heading
-            content
-            bgColor {
+            companyinfo {
               id
-              bgcolor
+              companyName
+              companyAddress
+              companyEmail
+              orgNr
+              companyPhone
             }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRll {
-            id
-            heading
-            content
-            bgColor {
+            socialmedia {
               id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentBlockTxtRsl {
-            id
-            heading
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            alt
-            caption
-          }
-          ... on ComponentSharedSeo {
-            id
-            metaSocial {
-              id
-              socialNetwork
-              title
-              description
-              image {
+              socialImg {
                 data {
                   attributes {
                     alternativeText
-                    caption
                     width
                     height
                     url
                   }
                 }
               }
+              url
+              target
+              isExternal
+              label
             }
-            metaTitle
-            metaDescription
-            metaImage {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
+            link {
+              label
+              url
+              style
+              txt
             }
-            keywords
-            metaRobots
-            structuredData
-            metaViewport
-            canonicalURL
-          }
-          ... on ComponentSharedMedia {
-            id
-            media {
-              data {
-                id
-                attributes {
-                  name
-                  alternativeText
-                  caption
-                  width
-                  height
-                  formats
-                  hash
-                  ext
-                  mime
-                  size
-                  url
-                  previewUrl
-                  provider
-                  provider_metadata
-                  createdAt
-                  updatedAt
-                }
-              }
-            }
-            caption
-            alt
-            bgMedia {
+            label
+            bgColor {
               bgcolor
             }
           }
-          ... on Error {
-            code
-            message
-          }
-          ... on ComponentFormForm {
-            id
-            form {
-              data {
-                id
-                attributes {
-                  FormName
-                  FormDescription
-                  bgModule {
-                    bgcolor
-                  }
-                  bgForm {
-                    bgcolor
-                  }
-                  slug
-                  Formfields {
-                    ... on ComponentFormInput {
-                      fieldID
-                      fieldname
-                      id
-                      placeholder
-                    }
-                    ... on ComponentFormFirstname {
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormEmail {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormLastname {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormCheck {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormPhone {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on ComponentFormSwitch {
-                      id
-                      placeholder
-                      fieldname
-                      required
-                    }
-                    ... on Error {
-                      code
-                      message
-                    }
-                    ... on ComponentSharedButton {
-                      id
-                      label
-                      link
-                      txt
-                      style
-                    }
-                    ... on ComponentFormTextfield {
-                      id
-                      disclaimer
-                    }
-                  }
-                  createdAt
-                  updatedAt
-                  publishedAt
-                }
-              }
-            }
-          }
-        }
-        createdAt
-        updatedAt
-        publishedAt
-      }
-      
-    }
-  }
-}
-`;
-
-/* GLOBALS */
-
-export const GET_GLOBALS = gql`
-query Global {
-  global {
-    data {
-      id
-      attributes {
-        navigation {
-          id
-          companylogo {
-            data {
-              id
-              attributes {
-                alternativeText
-                width
-                height
-                url
-              }
-            }
-          }
-          navlink {
-            id
-            label
-            url
-            txt
-            style
-          }
-          bgColor {
-            bgcolor
-        }
-      }
-        footer {
-          id
-          companyinfo {
-            id
-            companyName
-            companyAddress
-            companyEmail
-            orgNr
-            companyPhone
-          }
-          socialmedia {
-            id
-            socialImg {
-              data {
-                attributes {
-                  alternativeText
-                  width
-                  height
-                  url
-                }
-              }
-            }
-            url
-            target
-            isExternal
-            label
-          }
-          link {
-            label
-            url
-            style
-            txt
-          }
-          label
-          bgColor {
-            bgcolor
-          }
         }
       }
     }
   }
-}
 `;

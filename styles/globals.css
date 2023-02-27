@@ -64,23 +64,23 @@
 */
 
 .markdown h1 {
-  @apply text-4xl font-bold mb-4;
+  @apply text-4xl font-bold;
 }
 .markdown h2 {
   @apply text-2xl font-bold;
 }
 .markdown h3 {
-  @apply text-xl font-bold mb-4;
+  @apply text-xl font-bold;
 }
 .markdown h4 {
-  @apply text-xl font-bold mb-4;
+  @apply text-lg font-bold;
 }
 .markdown p {
-  @apply text-lg leading-7 mb-4;
+  @apply text-lg mb-4;
 }
 .markdown ul, .markdown ol {
-  @apply list-square marker:text-oculos-aqua ml-4;
+  @apply list-square marker:text-oculos-aqua ml-5 mb-4;
 }
 .markdown li {
-  @apply text-lg leading-7;
+  @apply text-lg;
 }

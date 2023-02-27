@@ -3,10 +3,10 @@ import { customColors } from "../../customdata";
 
 const background = customColors();
 
-export default function ComponentSharedMedia({ media, bgMedia: {bgcolor} }) {
+export default function ComponentSharedMedia({ media, alt, caption, bgMedia: {bgcolor} }) {
   
-  const { alternativeText, caption, url } = media.data[0].attributes;
-
+  const { alternativeText, url } = media.data[0].attributes;
+  
   return (
     <section className="py-5 my-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
       <section className="max-w-[960px] mx-5 lg:mx-auto relative aspect-video">
@@ -15,7 +15,7 @@ export default function ComponentSharedMedia({ media, bgMedia: {bgcolor} }) {
             fill
             style={{ objectFit: "cover" }}
             src={url}
-            alt={alternativeText}
+            alt={alt}
           />
         </div>
       </section>

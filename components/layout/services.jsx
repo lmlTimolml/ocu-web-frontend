@@ -12,10 +12,10 @@ export default function Services({ service }) {
   });
 
   return (
-    <>
+    <article>
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;
       })}
-    </>
+    </article>
   );
 }

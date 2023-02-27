@@ -19,6 +19,8 @@ export default function contactPage({ pageContent, globalContent }) {
     Feed,
   } = pageContent;
 
+console.log(pageContent);
+
   const { companyemail, companyaddress, companyphone } = companydata();
 
   const components = Feed?.map((component) => {

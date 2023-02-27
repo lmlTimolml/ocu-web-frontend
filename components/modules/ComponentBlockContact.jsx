@@ -13,12 +13,9 @@ export default function ContactBlock({
   bgModule,
 }) {
 
-  const { label, link, txt, style } = button[0];
   const bgcolor = bgContact.bgcolor;
   const bgmodule = bgModule.bgcolor;
   const url = contmedia?.data?.attributes?.url;
-
-  console.log("Button", alt);
 
   return (
     <section

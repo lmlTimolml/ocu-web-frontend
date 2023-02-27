@@ -9,8 +9,8 @@ export default function ComponentSharedMedia({ media, alt, caption, bgMedia: {bg
   
   return (
     <section className="py-5 my-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-      <section className="max-w-[960px] mx-5 lg:mx-auto relative aspect-video">
-        <div className="block">
+      <section className="max-w-[960px] mx-5 lg:mx-auto">
+        <div className="block relative aspect-video">
           <Image
             fill
             style={{ objectFit: "cover" }}

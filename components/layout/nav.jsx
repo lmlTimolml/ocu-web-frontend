@@ -26,8 +26,8 @@ export default function Navigation({navigation}) {
             <Image
               src={companylogo.data.attributes.url}
               width={190}
-              height={25}
-              style={{ objectFit: "contain", width: "190", height:"25" }}
+              height={32}
+              style={{ objectFit: "contain" }}
               alt={companylogo.data.attributes.alternativeText}
             />
           </Link>

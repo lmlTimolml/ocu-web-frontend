@@ -16,7 +16,7 @@ export default function FeaturedLeft({ eventContent }) {
   } = eventContent.attributes;
 
   const img = logo.data;
-console.log(title);
+
   return (
     <div
       key={id}

@@ -12,7 +12,7 @@ export default function ComponentBlockTxtLlr({
   alt,
   bgColor: { bgcolor },
 }) {
-  const { alternativeText, url } = media.data[0].attributes;
+  const { url } = media.data[0].attributes;
   
   return (
     <section className="pt-5" style={{ backgroundColor: `${background[bgcolor]}`}}>

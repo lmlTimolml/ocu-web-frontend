@@ -19,8 +19,6 @@ export default function servicesPage({ pageContent, globalContent }) {
     Feed,
   } = pageContent;
 
-  console.log("tjen", alt);
-
   const servLink = servItem[0].events.data;
 
   const components = Feed?.map((component) => {
@@ -28,8 +26,6 @@ export default function servicesPage({ pageContent, globalContent }) {
       require(`../../components/modules/${component.__typename}`).default;
     return <ComponentType key={component.id} {...component} />;
   });
-
-  console.log("Page: Tjenester", servLink);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>

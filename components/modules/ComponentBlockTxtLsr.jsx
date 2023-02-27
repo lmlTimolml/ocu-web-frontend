@@ -9,9 +9,10 @@ export default function ComponentBlockTxtLsr({
   heading,
   content,
   media,
+  alt,
   bgColor: { bgcolor },
 }) {
-  const { alternativeText, url } = media.data[0].attributes;
+  const { url } = media.data[0].attributes;
 
   return (
     <section className="pt-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
@@ -22,7 +23,7 @@ export default function ComponentBlockTxtLsr({
             {content && <div className="text-lg leading-6 markdown"><ReactMarkdown>{content}</ReactMarkdown></div>}
           </div>
           <div className="col-span-8 md:col-span-4">
-            <Image height={960} width={960} src={url} alt={alternativeText} />
+            <Image height={960} width={960} src={url} alt={alt} />
           </div>
         </div>
       </div>

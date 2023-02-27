@@ -15,8 +15,6 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
 
   /* Breadcrumbs */
 
-console.log("hero", alt);
-
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState();
 
@@ -48,7 +46,7 @@ console.log("hero", alt);
           fill
           priority
           src={heroImage.data.attributes.url}
-          alt={alt}
+          alt={heroTitle}
         />
         <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
         <div className="text-white z-[2] mx-5 lg:mx-auto min-w-3xl max-w-4xl">

@@ -1897,7 +1897,6 @@ query ContactPage {
 }
 `;
 
-
 /* Inspirasjonpage */
 export const GET_INSPIRATION_PAGE = gql`
   query {
@@ -1928,8 +1927,6 @@ export const GET_INSPIRATION_PAGE = gql`
     }
   }
 `;
-
-
 
 /* Services Page */
 
@@ -2419,12 +2416,11 @@ query servicesPage {
     }
   }
 }
-`
-;
+`;
 
 /* GLOBALS */
 
-const GET_GLOBALS = gql`
+export const GET_GLOBALS = gql`
 query Global {
   global {
     data {
@@ -2497,5 +2493,3 @@ query Global {
   }
 }
 `;
-
-export { GET_GLOBALS };

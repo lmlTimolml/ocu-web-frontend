@@ -35,6 +35,7 @@ export default function contactPage({ pageContent, globalContent }) {
         heroButton={heroButton}
         heroImage={heroImage}
         alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
       <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
         <div className="flex max-w-[960px] mx-5 lg:mx-auto justify-between">

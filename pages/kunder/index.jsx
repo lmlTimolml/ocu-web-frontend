@@ -8,7 +8,7 @@ const background = customColors();
 export default function clientsPage({pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath
   } = pageContent;
 
@@ -27,6 +27,8 @@ export default function clientsPage({pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
       
       {components?.map((components, i) => {

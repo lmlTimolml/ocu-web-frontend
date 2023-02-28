@@ -12,7 +12,7 @@ const background = customColors();
 export default function aboutPage({ pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath
   } = pageContent;
 
@@ -31,6 +31,8 @@ export default function aboutPage({ pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
 
 <section className="px-5 py-6 bg-oculos-lightersage">

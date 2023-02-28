@@ -10,7 +10,7 @@ const background = customColors();
 export default function eventPage({ pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath
   } = pageContent;
 
@@ -29,6 +29,8 @@ export default function eventPage({ pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
       
       {components?.map((components, i) => {
@@ -45,7 +47,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageContent: pageContent.getEventPageContent.data.attributes, // creates a const from toplevel query and serves it as prop
+      pageContent: pageContent.eventPage.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
     },
   };

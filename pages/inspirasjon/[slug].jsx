@@ -8,7 +8,7 @@ const background = customColors();
 export default function Article({pageContent, globalContent }) {
   const {
     pageTitle,
-    heroSection: { heroTitle, heroDescription, heroButton, heroImage },
+    heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath
   } = pageContent;
 
@@ -27,6 +27,8 @@ export default function Article({pageContent, globalContent }) {
         heroDescription={heroDescription}
         heroButton={heroButton}
         heroImage={heroImage}
+        alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
       
       {components?.map((components, i) => {
@@ -47,17 +49,5 @@ export async function getStaticPaths() {
   return {
     paths,
     fallback: false,
-  };
-}
-
-export async function getStaticProps() {
-  const pageContent = await getInspirationPageContent(); // fetches query
-  const globalContent = await getGlobalContent();
-
-  return {
-    props: {
-      pageContent: pageContent.inspirationPage.data.attributes, // creates a const from toplevel query and serves it as prop
-      globalContent: globalContent.global.data.attributes,
-    },
   };
 }

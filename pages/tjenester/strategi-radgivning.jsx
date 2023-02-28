@@ -27,6 +27,7 @@ export default function StrategiRadgivning({ pageContent, globalContent }) {
         heroButton={heroButton}
         heroImage={heroImage}
         alt={alt}
+        breadcrumbpath={breadcrumbpath}
       />
       <section className="py-5">
       <div className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>

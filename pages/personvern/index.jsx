@@ -19,8 +19,6 @@ export default function personvernPage({ pageContent, globalContent }) {
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Page: Personvern");
-
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
       <Hero

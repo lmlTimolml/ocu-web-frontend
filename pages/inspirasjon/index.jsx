@@ -1,3 +1,7 @@
+export default function inspirationPage({pageContent, globalContent }) {
+
+  return null;
+  }
 /* import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getInspirationPageContent, getGlobalContent } from "../../lib/api";

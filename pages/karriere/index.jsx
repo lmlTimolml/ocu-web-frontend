@@ -1,3 +1,7 @@
+export default function careerPage({pageContent, globalContent }) {
+
+  return null;
+  }
 /* import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getCareerPageContent, getGlobalContent } from "../../lib/api";

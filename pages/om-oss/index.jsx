@@ -1,4 +1,8 @@
-/* import Link from "next/link";
+export default function aboutPage({ pageContent, globalContent }) {
+
+return null;
+}
+  /* import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";

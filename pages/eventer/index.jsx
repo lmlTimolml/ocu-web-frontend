@@ -1,3 +1,7 @@
+export default function eventPage({ pageContent, globalContent }) {
+
+  return null;
+  }
 /* import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout/layout";

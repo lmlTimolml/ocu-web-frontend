@@ -1,9 +1,6 @@
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getPersonvernPageContent, getGlobalContent } from "../../lib/api";
-import { customColors } from "../../customdata";
-
-const background = customColors();
 
 export default function personvernPage({ pageContent, globalContent }) {
   const {
@@ -30,9 +27,12 @@ export default function personvernPage({ pageContent, globalContent }) {
         breadcrumbpath={breadcrumbpath}
       />
 
-      {components?.map((components, i) => {
-        return <section key={i}>{components}</section>;
-      })}
+<article className="py-5">
+        {components?.map((components, i) => {
+          return <section key={i}>{components}</section>;
+        })}
+      </article>
+
     </Layout>
   );
 }

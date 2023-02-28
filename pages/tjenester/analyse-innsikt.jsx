@@ -14,7 +14,7 @@ export default function AnalyseInnsikt({ pageContent, globalContent }) {
     breadcrumbpath,
     servnav: {
       button,
-      bgColor: {bgcolor}
+      bgColor: { bgcolor },
     },
     service,
   } = pageContent;
@@ -30,30 +30,36 @@ export default function AnalyseInnsikt({ pageContent, globalContent }) {
         breadcrumbpath={breadcrumbpath}
       />
       <section className="py-5">
-      <div className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-        <div className="max-w-[960px] mx-5 lg:mx-auto">
-          {button && (
-            <div className="grid pb-5 gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
-              {button?.map((btn, i) => {
-                const { label, link, txt, style } = btn;
-                const Button = dynamic(() => import(`../../components/buttons/${style}`), {
-                  ssr: false,
-                });
-                return (
-                  <Button
-                  key={i}
-                  label={label}
-                  txt={txt}
-                  link={link}
-                  style={style}
-                  />
+        <div
+          className="py-5"
+          style={{ backgroundColor: `${background[bgcolor]}` }}
+        >
+          <div className="max-w-[960px] mx-5 lg:mx-auto">
+            {button && (
+              <div className="grid pb-5 gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
+                {button?.map((btn, i) => {
+                  const { label, link, txt, style } = btn;
+                  const Button = dynamic(
+                    () => import(`../../components/buttons/${style}`),
+                    {
+                      ssr: false,
+                    }
+                  );
+                  return (
+                    <Button
+                      key={i}
+                      label={label}
+                      txt={txt}
+                      link={link}
+                      style={style}
+                    />
                   );
                 })}
-            </div>
-          )}
+              </div>
+            )}
           </div>
-          </div>
-          <Services service={service} />
+        </div>
+        <Services service={service} />
       </section>
     </Layout>
   );

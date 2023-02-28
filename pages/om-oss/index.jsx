@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
@@ -61,4 +61,4 @@ export async function getStaticProps() {
       globalContent: globalContent.global.data.attributes,
     },
   };
-}
+} */

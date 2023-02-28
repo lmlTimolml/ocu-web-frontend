@@ -5708,7 +5708,7 @@ export const GET_INSPIRATION_PAGE = gql`
   }
 `;
 
-/* Inspiration Page */
+/* Events Page */
 
 export const GET_EVENTS_PAGE = gql`
   query eventsPage {

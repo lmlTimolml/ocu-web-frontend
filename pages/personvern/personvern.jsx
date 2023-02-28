@@ -45,7 +45,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageContent: pageContent.personvernPage.data.attributes,
+      pageContent: pageContent.personvern.data.attributes,
       globalContent: globalContent.global.data.attributes,
     },
   };

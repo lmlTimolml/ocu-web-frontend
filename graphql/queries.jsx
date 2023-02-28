@@ -3916,7 +3916,7 @@ export const GET_ABOUT_PAGE = gql`
 
 export const GET_PERSONVERN_PAGE = gql`
   query personvernPage {
-    personvernPage {
+    personvern {
       data {
         id
         attributes {

@@ -20,6 +20,10 @@ module.exports = {
           hvit:'white',
         },
       },
+      gridTemplateRows: {
+        // Simple 8 row grid
+       '8': 'repeat(8, minmax(0, 1fr))',
+      }
     },
     content: {
       'arrowwhite': 'url("/icons/arrow-w.svg")',

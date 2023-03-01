@@ -5,7 +5,7 @@ const ReactMarkdown= dynamic(() => import('react-markdown'),{ ssr: false })
 export default function ComponentFormTextfield({ disclaimer }) {
   return (
     <div className="flex flex-col">
-      <p  className="text-sm markdown"><ReactMarkdown>{disclaimer}</ReactMarkdown></p>
+      <div className="markdown"><ReactMarkdown>{disclaimer}</ReactMarkdown></div>
     </div>
   );
 }

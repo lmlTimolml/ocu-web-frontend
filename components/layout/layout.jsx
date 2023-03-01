@@ -15,6 +15,7 @@ export default function Layout({ pageTitle, children, globalContent }) {
 
       <Head>
         <title>{pageTitle}</title>
+        
       </Head>
 
       <main className="text-base antialiased">

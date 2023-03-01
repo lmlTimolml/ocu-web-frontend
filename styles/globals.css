@@ -78,9 +78,15 @@
 .markdown p {
   @apply text-lg mb-4;
 }
+.markdown small {
+  @apply text-[.85rem];
+}
 .markdown ul, .markdown ol {
   @apply list-square marker:text-oculos-aqua ml-5 mb-4;
 }
 .markdown li {
   @apply text-lg;
+}
+.markdown a {
+  @apply text-oculos-aqua underline;
 }

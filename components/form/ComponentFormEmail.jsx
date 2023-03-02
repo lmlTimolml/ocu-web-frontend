@@ -8,7 +8,7 @@ export default function ComponentFormEmail({
 }) {
   const [enteredEmail, setEnteredEmail] = useState("");
 
-  console.log("EPOST", enteredEmail);
+  console.log("EPOST", fieldname);
 
   return (
     <div className="flex flex-col">

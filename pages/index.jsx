@@ -65,6 +65,7 @@ export async function getStaticProps() {
     props: {
       pageContent: pageContent.homePage.data.attributes,
       globalContent: globalContent.global.data.attributes,
+      revalidate: 10,
     },
   };
 }

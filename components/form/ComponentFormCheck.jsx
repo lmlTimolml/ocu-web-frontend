@@ -7,13 +7,13 @@ export default function ComponentFormCheck({
   fieldID,
   fieldname,
 }) {
-  const [checkedConsent, setCheckedConsent] = useState("");
-  // const [checkedEmail, setCheckedEmail] = useState("");
-  // const [checkedPhone, setCheckedPhone] = useState("");
+  const [checkedConsent, setCheckedConsent] = useState(false);
+  // const [checkedEmail, setCheckedEmail] = useState(false);
+  // const [checkedPhone, setCheckedPhone] = useState(false);
   
   // console.log({ data: `${checkedConsent}, ${checkedEmail}, ${checkedPhone}`});
 
-  console.log("CHECKBOX", checkedConsent);
+  console.log("CHECKBOX", required);
   
   return (
     <div className="flex align-middle pt-3">
@@ -22,7 +22,7 @@ export default function ComponentFormCheck({
         id={fieldID}
         name={fieldID}
         value={checkedConsent}
-        onChange={(event) => setCheckedConsent(event.target.value)}
+        onChange={(event) => setCheckedConsent(event.target.checked)}
         className="appearance-none absolute h-6 w-6"
       />
       <div className="bg-white border border-gray-400 w-4 h-4 flex flex-shrink-0 justify-center items-center mr-2">

@@ -58,16 +58,16 @@ export default function Form({ form }) {
         >
           <div className="p-2">
             {FormName && (
-              <h2 className="text-2xl sm:text-3xl font-black">{FormName}</h2>
+              <h2 className="text-2xl sm:text-3xl font-black mb-2">{FormName}</h2>
             )}
             {FormDescription && (
               <p className="text-md sm:text-lg">{FormDescription}</p>
             )}
           </div>
-          <div className="flex flex-col md:grid md:grid-cols-2 md:grid-flow-col md:grid-rows-5 h-auto md:max-h-[400px]">
+          <div className="flex flex-col sm:flex-wrap sm:max-h-[340px]">
             {formElements?.map((formElements, i) => {
               return (
-                <div key={i} className="p-2 sm:col-span-1">
+                <div key={i} className="p-2 sm:w-[50%]">
                   {formElements}
                 </div>
               );

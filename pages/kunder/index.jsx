@@ -9,7 +9,8 @@ export default function clientsPage({pageContent, globalContent }) {
   const {
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
-    breadcrumbpath
+    breadcrumbpath,
+    Feed,
   } = pageContent;
 
   const components = Feed?.map((component) => {
@@ -45,7 +46,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageContent: pageContent.clientsPage.data.attributes, // creates a const from toplevel query and serves it as prop
+      pageContent: pageContent.clientPage.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
     },
   };

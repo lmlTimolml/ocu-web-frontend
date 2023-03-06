@@ -49,12 +49,17 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
           alt={heroTitle}
         />
         <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
-        <div className="text-white z-[2] mx-5 lg:mx-auto min-w-3xl max-w-4xl">
+        <div
+      className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]"
+    >
+        <div className="text-white z-[2] col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
           <h2 className="text-3xl sm:text-5xl font-bold">{heroTitle}</h2>
           <p className="py-5 text-lg sm:text-xl">{heroDescription}</p>
         </div>
+        </div>
       </header>
-      <section className="px-5 bg-white mx-auto">
+      <section className="bg-white mx-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
+      <div className="col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
         <Breadcrumb>
           <BreadcrumbItem href="/">Hjem</BreadcrumbItem>
           {breadcrumbs &&
@@ -64,6 +69,7 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
               </BreadcrumbItem>
             ))}
         </Breadcrumb>
+        </div>
       </section>
     </>
   );

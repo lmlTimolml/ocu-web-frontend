@@ -1,8 +1,4 @@
-export default function clientsPage({pageContent, globalContent }) {
-
-  return null;
-}
-/* import Layout from "../../components/layout/layout";
+import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getClientsPageContent, getGlobalContent } from "../../lib/api";
 import { customColors } from "../../customdata";
@@ -53,4 +49,4 @@ export async function getStaticProps() {
       globalContent: globalContent.global.data.attributes,
     },
   };
-} */
+}

@@ -20,8 +20,9 @@ export default function Navigation({navigation}) {
 
   return (
     <nav className="fixed left-0 top-0 w-full z-10 antialiased" style={{ backgroundColor: `${background[bgcolor]}`}}>
-      <div className="py-4 max-w-[960px] mx-auto flex justify-between items-top">
-        <div className="max-[960px]:ml-5 relative h-auto w-52">
+      <div className="py-5 mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
+        <div className="flex justify-between col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
+        <div className="relative h-auto w-52">
           <Link href="/">
             <Image
               src={companylogo.data.attributes.url}
@@ -32,7 +33,7 @@ export default function Navigation({navigation}) {
             />
           </Link>
         </div>
-        <ul className="hidden min-[910px]:flex md:mr-5 lg:mr-0">
+        <ul className="hidden min-[910px]:flex">
           {navlink?.map((link, i) => (
             <li key={i} className="pl-4">
               <Link
@@ -48,7 +49,7 @@ export default function Navigation({navigation}) {
         {/* Mobile button */}
         <div
           onClick={handleNav}
-          className="flex self-center mr-5 min-[910px]:hidden z-10"
+          className="flex self-center min-[910px]:hidden z-10"
         >
           {nav ? <FaTimes size="25" /> : <FaBars size="25" />}
         </div>
@@ -71,6 +72,7 @@ export default function Navigation({navigation}) {
             ))}
           </ul>
         </nav>
+        </div>
       </div>
     </nav>
   );

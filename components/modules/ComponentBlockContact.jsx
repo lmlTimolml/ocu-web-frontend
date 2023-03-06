@@ -21,7 +21,10 @@ export default function ContactBlock({
     <section
       className="py-5 my-4" style={{ backgroundColor: `${background[bgmodule]}`}}
     >
-      <div className="max-w-[960px] mx-5 lg:mx-auto">
+    <div
+      className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]"
+    >
+      <div className="col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
         {url && <Image height={540} width={960} src={url} alt={alt} />}
         <div
           className="flex flex-col justify-start items-center w-full p-6" style={{ backgroundColor: `${background[bgcolor]}`}}
@@ -47,6 +50,7 @@ export default function ContactBlock({
           })}
           </div>}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -2491,6 +2491,26 @@ export const GET_FRONT_PAGE = gql`
                 style
               }
             }
+
+          ... on ComponentBlockImgGrid {
+            bgColor {
+              bgcolor
+            }
+            logo {
+              alt
+              logo {
+                data {
+                  attributes {
+                    alternativeText
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+              url
+            }
+          }
           }
           createdAt
           updatedAt

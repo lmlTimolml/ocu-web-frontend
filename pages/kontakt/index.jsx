@@ -38,11 +38,12 @@ export default function contactPage({ pageContent, globalContent }) {
         breadcrumbpath={breadcrumbpath}
       />
       <section className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-        <div className="flex max-w-[960px] mx-5 lg:mx-auto justify-between">
+        <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
+        <div className="lg:col-start-3 col-span-3 md:col-span-6 lg:col-span-8 flex justify-between">
           {companycontactinfo?.map((info, i) => (
             <div
               key={i}
-              className="relative w-[33%] flex flex-col even:border-x-oculos-harmony even:border-x items-center"
+              className="relative w-[30%] flex flex-col even:border-x-oculos-harmony even:border-x items-center"
             >
               <Link href={info.url}>
                 <Image
@@ -74,6 +75,7 @@ export default function contactPage({ pageContent, globalContent }) {
               )}
             </div>
           ))}
+        </div>
         </div>
       </section>
 

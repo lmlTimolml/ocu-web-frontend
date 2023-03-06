@@ -4411,6 +4411,41 @@ query clientPage {
           id
           breadCrumb
         }
+        clients {
+          id
+          bgModule {
+            id
+            bgcolor
+          }
+          client {
+            id
+            img {
+              data {
+                id
+                attributes {
+                  alternativeText
+                  width
+                  height
+                  url
+                }
+              }
+            }
+            alt
+            title
+            content
+            bgColor {
+              id
+              bgcolor
+            }
+            button {
+              id
+              label
+              link
+              txt
+              style
+            }
+          }
+        }
         Feed {
           ... on ComponentBlockContact {
             id

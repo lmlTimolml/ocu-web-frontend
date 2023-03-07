@@ -4444,6 +4444,14 @@ query clientPage {
               txt
               style
             }
+            tags {
+              data {
+                attributes {
+                  name
+                }
+              }
+            }
+            date
           }
         }
         Feed {

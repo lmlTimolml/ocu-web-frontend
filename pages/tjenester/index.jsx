@@ -65,5 +65,6 @@ export async function getStaticProps() {
       pageContent: pageContent.servicesPage.data.attributes,
       globalContent: globalContent.global.data.attributes,
     },
+    revalidate: 10,
   };
 }

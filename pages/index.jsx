@@ -58,14 +58,15 @@ export default function HomePage({ pageContent, globalContent }) {
 }
 
 export async function getStaticProps() {
+  console.log("regen");
   const pageContent = await getFrontPageContent();
   const globalContent = await getGlobalContent();
 
   return {
     props: {
       pageContent: pageContent.homePage.data.attributes,
-      globalContent: globalContent.global.data.attributes,
-      revalidate: 10,
+      globalContent: globalContent.global.data.attributes
     },
+    revalidate: 10,
   };
 }

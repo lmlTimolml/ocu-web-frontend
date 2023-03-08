@@ -13,16 +13,24 @@ export default function Card({
   alt,
   id,
   slug,
-  button: { label, link, url, txt, style },
-  bgColor: {bgcolor}}
+  button: { label, url, txt, style },
+  bgColor: {bgcolor}},
+  featuredClient
 }) {
             const Button = dynamic(() => import(`../buttons/${style}`), {
               ssr: false,
             });
 
-  console.log("Kundekort", slug);
-
-  const imgurl = img?.data.attributes.url;
+            let clientlink;
+            if (Array.isArray(featuredClient)) {
+              clientlink = featuredClient[0].attributes.slug;
+            } else {
+              clientlink = featuredClient.attributes.slug;
+            }
+            
+            console.log("Kundekort", clientlink);
+  
+            const imgurl = img?.data.attributes.url;
 
   return (
       <div className="col-span-3 sm:col-span-2 md:col-span-2 lg:col-span-3">
@@ -44,7 +52,7 @@ export default function Card({
          <Button
                 label={label}
                 txt={txt}
-                link={link}
+                link={`/clients/${clientlink}`}
                 url={url}
                 style={style}
               />

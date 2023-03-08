@@ -31,9 +31,9 @@ export default function StrategiRadgivning({ pageContent, globalContent }) {
       />
       <section className="py-5">
       <div className="py-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-        <div className="max-w-[960px] mx-5 lg:mx-auto">
-          {button && (
-            <div className="grid pb-5 gap-x-4 gap-y-4 grid-cols-2 sm:grid-cols-4 mt-4 bg-transparent antialiased max-w-[960px] mx-auto">
+      <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
+            {button && (
+              <div className="col-span-3 md:col-span-6 lg:col-start-3 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8">
               {button?.map((btn, i) => {
                 const { label, link, txt, style } = btn;
                 const Button = dynamic(() => import(`../../components/buttons/${style}`), {

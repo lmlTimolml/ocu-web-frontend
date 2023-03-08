@@ -30,17 +30,17 @@ export default function ComponentBlockQuestions({
       className="py-5 my-5"
       style={{ backgroundColor: `${background[bgmodule]}` }}
     >
-      <div className="max-w-[960px] mx-5 lg:mx-auto">
-        <div className="grid grid-cols-8 w-full">
-          <div className="list-square ml-0 sm:ml-12 col-span-8 md:col-span-4 pr-4 pb-4">
+      <div className="list-square mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 max-w-[1440px]">
+        
+          <div className="p-4 col-span-3 sm:col-span-1 md:col-span-2 lg:col-span-4 lg:col-start-3">
             {heading && <h2 className="text-2xl font-bold">{heading}</h2>}
             {content && <div className="text-lg leading-6">{content}</div>}
           </div>
-          <div className="col-span-4 md:col-span-2">
+          <div className="col-span-3 sm:col-span-1 md:col-span-2">
             <Image height={960} width={960} src={url} alt={alternativeText} />
           </div>
           <div
-            className="flex flex-col justify-between col-span-4 md:col-span-2 p-4"
+            className="p-4 flex flex-col justify-between col-span-3 sm:col-span-1 md:col-span-2"
             style={{ backgroundColor: `${background[bgcolor]}` }}
           >
             <div>
@@ -52,7 +52,7 @@ export default function ComponentBlockQuestions({
               <Button label={label} txt={txt} link={link} style={style} type="submit" />
             </div>
           </div>
-        </div>
+        
       </div>
     </aside>
   );

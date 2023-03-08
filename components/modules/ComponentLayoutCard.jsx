@@ -7,8 +7,12 @@ const background = customColors();
 export default function Card({
   client: {title,
   img,
+  date,
+  tag,
   content,
   alt,
+  id,
+  slug,
   button: { label, link, url, txt, style },
   bgColor: {bgcolor}}
 }) {
@@ -16,7 +20,7 @@ export default function Card({
               ssr: false,
             });
 
-  console.log("Kundekort", label);
+  console.log("Kundekort", slug);
 
   const imgurl = img?.data.attributes.url;
 
@@ -26,6 +30,9 @@ export default function Card({
         <div
           className="flex flex-col justify-start w-full p-6" style={{ backgroundColor: `${background[bgcolor]}`}}
         >
+          {date && (
+            <p className="mb-4">{date}</p>
+          )}
           {title && (
             <h2 className="mb-2 text-2xl font-bold">{title}</h2>
           )}

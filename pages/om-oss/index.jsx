@@ -8,8 +8,6 @@ import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getAboutPageContent, getGlobalContent } from "../../lib/api";
 import { customColors } from "../../customdata";
-import LeaderGrid from "../../components/employees/leader-grid"
-import EmployeGrid from "../../components/employees/employee-grid";
 
 const background = customColors();
 
@@ -38,14 +36,6 @@ export default function aboutPage({ pageContent, globalContent }) {
         alt={alt}
         breadcrumbpath={breadcrumbpath}
       />
-
-<section className="px-5 py-6 bg-oculos-lightersage">
-        <LeaderGrid info={employee} />
-      </section>
-
-      <section className="px-5 py-6">
-        <EmployeGrid info={employee} />
-      </section>
       
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;

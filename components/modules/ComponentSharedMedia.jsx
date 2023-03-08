@@ -8,9 +8,9 @@ export default function ComponentSharedMedia({ media, alt, caption, bgMedia: {bg
   const { alternativeText, url } = media.data[0].attributes;
   
   return (
-    <section className="py-5 my-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-      <section className="max-w-[960px] mx-5 lg:mx-auto">
-        <div className="block relative aspect-video">
+    <section className="py-5 my-4" style={{ backgroundColor: `${background[bgcolor]}`}}>
+      <section className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-1 max-w-[1440px]">
+        <div className="block relative aspect-video col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
           <Image
             fill
             style={{ objectFit: "cover" }}
@@ -18,12 +18,12 @@ export default function ComponentSharedMedia({ media, alt, caption, bgMedia: {bg
             alt={alt}
           />
         </div>
-      </section>
-      {caption && <div>
-        <figcaption className="max-w-[960px] mx-5 lg:mx-auto mt-2 antialiased italic text-[0.75rem] relative">
+      {caption && <div className="col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
+        <figcaption className="italic text-[0.75rem]">
           {caption}
         </figcaption>
       </div>}
+      </section>
     </section>
   );
 }

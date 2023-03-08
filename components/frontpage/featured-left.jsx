@@ -20,7 +20,7 @@ export default function FeaturedLeft({ eventContent }) {
   return (
     <div
       key={id}
-      className="col-span-2 md:col-span-1 flex flex-col antialiased p-3 md:p-5 my-5" style={{ backgroundColor: `${background[bgcolor]}`}}
+      className="col-span-2 flex flex-col antialiased p-3 md:p-5 my-5" style={{ backgroundColor: `${background[bgcolor]}`}}
     >
       <div className="flex justify-between content-between mb-7">
         { title && <h1 className="font-bold text-2xl mb-5 self-center w-[70%]">{title}</h1>}

@@ -16,17 +16,17 @@ export default function ComponentBlockTxtLsr({
 
   return (
     <section className="pt-5" style={{ backgroundColor: `${background[bgcolor]}`}}>
-      <div className="max-w-[960px] mx-5 lg:mx-auto">
-        <div className="grid gap-4 grid-cols-8 w-full">
-          <div className="list-square ml-0 sm:ml-12 col-span-8 md:col-span-4">
+      <div className="list-square mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
+        
+          <div className="md:pl-8 col-span-3 lg:col-span-4 lg:col-start-3">
             {heading && <h2 className="text-2xl font-bold">{heading}</h2>}
             {content && <div className="text-lg leading-6 markdown"><ReactMarkdown>{content}</ReactMarkdown></div>}
           </div>
-          <div className="col-span-8 md:col-span-4">
+          <div className="col-span-3 lg:col-span-4 lg:col-start-7">
             <Image height={960} width={960} src={url} alt={alt} />
           </div>
         </div>
-      </div>
+      
     </section>
   );
 }

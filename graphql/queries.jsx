@@ -4925,6 +4925,9 @@ query clients {
         clientName
         slug
         ingress
+        bgModule {
+          bgcolor
+        }
         Feed {
           ... on ComponentBlockContact {
             id

@@ -1,6 +1,6 @@
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
-import Card from "../../components/modules/ComponentLayoutCard";
+import Image from "next/image";
 import {
   getClientInfo,
   getClientsPageContent,
@@ -21,7 +21,16 @@ export default function clientsPage({
     breadcrumbpath,
   } = pageContent;
 
-  const { Feed } = featuredClient;
+  const {
+    logo,
+    clientName,
+    ingress,
+    slug,
+    Feed,
+    bgModule: { bgcolor },
+  } = featuredClient;
+
+  const clientLogo = logo.data.attributes;
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -29,7 +38,7 @@ export default function clientsPage({
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Featured client CSR", featuredClient);
+  console.log("Featured client CSR", bgcolor);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -41,9 +50,22 @@ export default function clientsPage({
         alt={alt}
         breadcrumbpath={breadcrumbpath}
       />
+      <section className="pt-5 pb-10" style={{ backgroundColor: `${background[bgcolor]}`}}>
       <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
-        <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4"></div>
+        <div className="col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3"></div>
+        {clientLogo.url && (
+          <Image
+            height={100}
+            width={300}
+            style={{ objectFit: "contain", maxHeight: "40px", width: "auto" }}
+            src={clientLogo.url}
+            alt={clientLogo.alternativeText}
+            className="col-span-1 md:col-span-2 lg:col-span-3 lg:col-start-3 pb-2"
+          />
+        )}
+      <div className="p-4 border-black bg-white border col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">{ingress}</div>
       </div>
+      </section>
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;
       })}
@@ -52,11 +74,12 @@ export default function clientsPage({
 }
 
 export async function getStaticProps({ params }) {
-
   const pageContent = await getClientsPageContent(); // fetches query
   const globalContent = await getGlobalContent();
   const clientInfo = await getClientInfo();
-  const featuredClient = clientInfo.clients.data.find((c) => c.attributes.slug === params.clientid);
+  const featuredClient = clientInfo.clients.data.find(
+    (c) => c.attributes.slug === params.clientid
+  );
 
   /* console.log("Featured client SSR 2", clientInfo);
 

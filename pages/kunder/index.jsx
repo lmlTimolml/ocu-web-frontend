@@ -27,7 +27,9 @@ export default function clientsPage({
     Feed,
   } = pageContent;
 
-  console.log(client);
+
+  /* const {} = featuredClient.attributes; */
+  console.log(featuredClient);
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -48,9 +50,14 @@ export default function clientsPage({
       <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
         <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
           
-          {client?.map((client, i) => {
+          {/* {client?.map((client, i) => {
             return <Card key={i} client={client} featuredClient={featuredClient} />;
-          })}
+          })} */}
+          {client?.map((client, i) => {
+  return featuredClient?.map((featClient) => {
+            return <Card key={i} client={client} featClient={featClient} />;
+          });
+        })}
         </div>
       </div>
       {components?.map((components, i) => {

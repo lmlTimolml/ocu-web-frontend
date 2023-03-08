@@ -19,7 +19,7 @@ export default function Breadcrumb({ children }) {
   });
 
   return (
-    <nav className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]" aria-label="breadcrumb">
+    <nav className="mx-5 md:mx-10 lg:m-auto col-span-12 py-2" aria-label="breadcrumb">
       <ol className="p-1 flex items-center space-x-4 text-sm">{childrenWtihSeparator}</ol>
     </nav>
   );

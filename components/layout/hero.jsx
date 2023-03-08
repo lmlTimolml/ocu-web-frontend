@@ -59,7 +59,7 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
         </div>
       </header>
       <section className="bg-white mx-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
-      <div className="col-span-3 md:col-span-6 lg:col-span-8 lg:col-start-3">
+      <div className="col-span-12 lg:col-start-3">
         <Breadcrumb>
           <BreadcrumbItem href="/">Hjem</BreadcrumbItem>
           {breadcrumbs &&

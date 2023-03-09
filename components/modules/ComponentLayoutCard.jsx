@@ -34,7 +34,7 @@ const { logo, clientName, ingress, slug} = featClient.attributes;
   console.log("Kundekort", slug);
 
   const imgurl = img.data.attributes.url;
-  const logourl = logo
+  const logourl = logo.data.attributes.url;
 
   return (
     <div className="col-span-3 sm:col-span-2 md:col-span-2 lg:col-span-3">

@@ -20,7 +20,7 @@ export default function clientsPage({
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
-    clients: {
+    clientGrid: {
       bgModule: { bgcolor },
       client,
     },
@@ -29,7 +29,7 @@ export default function clientsPage({
 
 
   /* const {} = featuredClient.attributes; */
-  console.log(featuredClient);
+  console.log("Kunder", featuredClient[0].attributes.clientName);
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -48,7 +48,7 @@ export default function clientsPage({
         breadcrumbpath={breadcrumbpath}
       />
       <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
-        <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
+        { client && <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
           
           {/* {client?.map((client, i) => {
             return <Card key={i} client={client} featuredClient={featuredClient} />;
@@ -58,8 +58,8 @@ export default function clientsPage({
             return <Card key={i} client={client} featClient={featClient} />;
           });
         })}
-        </div>
-      </div>
+        </div> }
+      </div> 
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;
       })}

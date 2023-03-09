@@ -4411,47 +4411,34 @@ query clientPage {
           id
           breadCrumb
         }
-        clients {
-          id
+        clientGrid {
           bgModule {
-            id
             bgcolor
           }
-          client {
-            id
-            img {
-              data {
-                id
-                attributes {
-                  alternativeText
-                  width
-                  height
-                  url
+          clients {
+            data {
+              attributes {
+                bgModule {
+                  bgcolor
+                }
+                clientName
+                slug
+                createdAt
+                updatedAt
+                publishedAt
+                ingress
+                logo {
+                  data {
+                    attributes {
+                      alternativeText
+                      width
+                      height
+                      url
+                    }
+                  }
                 }
               }
             }
-            alt
-            title
-            content
-            bgColor {
-              id
-              bgcolor
-            }
-            button {
-              id
-              label
-              link
-              txt
-              style
-            }
-            tags {
-              data {
-                attributes {
-                  name
-                }
-              }
-            }
-            date
           }
         }
         Feed {
@@ -4898,6 +4885,7 @@ query clientPage {
         createdAt
         updatedAt
         publishedAt
+        
       }
     }
   }

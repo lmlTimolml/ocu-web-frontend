@@ -5,6 +5,8 @@ import { customColors } from "../../customdata";
 const background = customColors();
 
 export default function ImgGrid({ logo, bgColor: { bgcolor } }) {
+
+  
   return (
     <section style={{ backgroundColor: `${background[bgcolor]}` }}
     >
@@ -17,7 +19,7 @@ export default function ImgGrid({ logo, bgColor: { bgcolor } }) {
                   width={150}
                   height={50}
                   style={{ objectFit: "contain", maxHeight: "60px", width: "auto" }}
-                  alt={logo.logo.data.attributes.alt}
+                  alt={logo.alt}
                 />
               </Link>
           ))}

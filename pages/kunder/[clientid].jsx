@@ -27,7 +27,7 @@ export default function clientsPage({
     ingress,
     slug,
     Feed,
-    bgModule: { bgcolor },
+    bgCard: { bgcolor },
   } = featuredClient;
 
   const clientLogo = logo.data.attributes;
@@ -38,7 +38,7 @@ export default function clientsPage({
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Featured client CSR", bgcolor);
+  console.log("Featured client CSR", featuredClient);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -80,10 +80,6 @@ export async function getStaticProps({ params }) {
   const featuredClient = clientInfo.clients.data.find(
     (c) => c.attributes.slug === params.clientid
   );
-
-  /* console.log("Featured client SSR 2", clientInfo);
-
-  console.log("Featured client SSR", clientIdentifier); */
 
   return {
     props: {

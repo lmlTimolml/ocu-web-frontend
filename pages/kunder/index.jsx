@@ -20,16 +20,23 @@ export default function clientsPage({
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
-    clientGrid: {
-      bgModule: { bgcolor },
-      client,
-    },
     Feed,
+    clientGrid: {clients},
   } = pageContent;
 
+  const [featClient = {}] = featuredClient || [];
+const { logo,
+  date,
+  img,
+  clientName,
+  ingress,
+  slug,
+  url,
+  button,
+  bgCard } = { ...featClient };
 
-  /* const {} = featuredClient.attributes; */
-  console.log("Kunder", featuredClient[0].attributes.clientName);
+
+  console.log("Kunder", clients);
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -48,17 +55,24 @@ export default function clientsPage({
         breadcrumbpath={breadcrumbpath}
       />
       <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
-        { client && <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
+         <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
           
-          {/* {client?.map((client, i) => {
-            return <Card key={i} client={client} featuredClient={featuredClient} />;
-          })} */}
-          {client?.map((client, i) => {
-  return featuredClient?.map((featClient) => {
+          {clients.data?.map((client, i) => {
             return <Card key={i} client={client} featClient={featClient} />;
+          })} 
+          {/* {clients.data?.map((client, i) => {
+  return featuredClient?.map((featClient) => {
+            return <Card key={`${featClient.id}-${i}`} client={client} featClient={featClient} />;
           });
-        })}
-        </div> }
+        })}  */}
+
+{/* {clients.data?.map((client, i) => {
+  const featClient = featuredClient?.find(fc => fc.id === client.id);
+  return featClient ? <Card key={`${featClient.id}-${i}`} client={client} featClient={featClient} /> : null;
+})} */}
+
+
+        </div>
       </div> 
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;

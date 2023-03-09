@@ -4418,10 +4418,27 @@ query clientPage {
           clients {
             data {
               attributes {
-                bgModule {
+                alt
+                bgCard {
                   bgcolor
                 }
                 clientName
+                button {
+                  label
+                  link
+                  txt
+                  style
+                }
+                img {
+                  data {
+                    attributes {
+                      alternativeText
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
                 slug
                 createdAt
                 updatedAt
@@ -4913,8 +4930,24 @@ query clients {
         clientName
         slug
         ingress
-        bgModule {
+        bgCard {
           bgcolor
+        }
+        img {
+          data {
+            attributes {
+              alternativeText
+              width
+              height
+              url
+            }
+          }
+        }
+        button {
+          label
+          link
+          txt
+          style
         }
         Feed {
           ... on ComponentBlockContact {

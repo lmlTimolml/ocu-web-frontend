@@ -60,16 +60,6 @@ const { logo,
           {clients.data?.map((client, i) => {
             return <Card key={i} client={client} featClient={featClient} />;
           })} 
-          {/* {clients.data?.map((client, i) => {
-  return featuredClient?.map((featClient) => {
-            return <Card key={`${featClient.id}-${i}`} client={client} featClient={featClient} />;
-          });
-        })}  */}
-
-{/* {clients.data?.map((client, i) => {
-  const featClient = featuredClient?.find(fc => fc.id === client.id);
-  return featClient ? <Card key={`${featClient.id}-${i}`} client={client} featClient={featClient} /> : null;
-})} */}
 
 
         </div>
@@ -86,8 +76,6 @@ export async function getStaticProps() {
   const globalContent = await getGlobalContent();
   
   const featuredClient = await getClientInfo();
-
-  console.log("SSR", featuredClient);
 
   return {
     props: {

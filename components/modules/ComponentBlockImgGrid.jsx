@@ -15,7 +15,7 @@ export default function ImgGrid({ logo, bgColor: { bgcolor } }) {
           {logo?.map((logo, i) => (
               <Link key={i} href={logo.url} className="p-4 flex justify-center items-center relative">
                 <Image
-                  src={logo.logo.data.attributes.url}
+                  src={logo?.logo?.data?.attributes.url}
                   width={150}
                   height={50}
                   style={{ objectFit: "contain", height: "auto", maxWidth: "140px" }}

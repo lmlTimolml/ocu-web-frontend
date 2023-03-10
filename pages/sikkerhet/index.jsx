@@ -27,7 +27,7 @@ export default function securityPage({ pageContent, globalContent }) {
         breadcrumbpath={breadcrumbpath}
       />
 
-<article className="py-5">
+<article>
         {components?.map((components, i) => {
           return <section key={i}>{components}</section>;
         })}

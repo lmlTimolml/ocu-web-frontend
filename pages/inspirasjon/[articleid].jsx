@@ -1,7 +1,8 @@
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
-import ArticleCard from "../../components/modules/ComponentArticleCard";
+import Image from "next/image";
 import {
+  getArticleInfo,
   getInspiriationPageContent,
   getGlobalContent,
 } from "../../lib/api";
@@ -9,27 +10,36 @@ import { customColors } from "../../customdata";
 
 const background = customColors();
 
-export default function inspirationPage({
+export default function articlesPage({
   pageContent,
   globalContent,
+  featuredArticle,
 }) {
   const {
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
     breadcrumbpath,
-    Feed,
-    articleGrid: {articles},
   } = pageContent;
 
-  console.log("Artikler", articles);
-
-  /* const tag = articles; */
+  const {
+    articleName,
+    ingress,
+    date,
+    tags,
+    category,
+    img,
+    Feed,
+    button: {label,txt,link,style},
+    bgCard: {bgcolor}
+  } = featuredArticle;
 
   const components = Feed?.map((component) => {
     const ComponentType =
       require(`../../components/modules/${component.__typename}`).default;
     return <ComponentType key={component.id} {...component} />;
   });
+
+  console.log("Featured Article CSR", featuredArticle);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -41,16 +51,7 @@ export default function inspirationPage({
         alt={alt}
         breadcrumbpath={breadcrumbpath}
       />
-      <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
-         <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
-          
-          {articles.data?.map((article, i) => {
-            return <ArticleCard key={i} article={article} />;
-          })} 
-
-
-        </div>
-      </div> 
+      
       {components?.map((components, i) => {
         return <section key={i}>{components}</section>;
       })}
@@ -58,16 +59,29 @@ export default function inspirationPage({
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const pageContent = await getInspiriationPageContent(); // fetches query
   const globalContent = await getGlobalContent();
+  const articleInfo = await getArticleInfo();
+  const featuredArticle = articleInfo.articles.data.find(
+    (art) => art.attributes.slug === params.articleid
+  );
 
   return {
     props: {
       pageContent: pageContent.articlesPage.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
-      
+      featuredArticle: featuredArticle.attributes,
     },
     revalidate: 10,
   };
+}
+
+export async function getStaticPaths() {
+  const articleInfo = await getArticleInfo();
+  const paths = articleInfo.articles.data.map((article) => ({
+    params: { articleid: article.attributes.slug },
+  }));
+
+  return { paths, fallback: false };
 }

@@ -22,8 +22,6 @@ export default function Card({ client }) {
 
   const imgurl = img.data.attributes.url;
 
-  console.log(imgurl);
-
   return (
     <div className="col-span-3 sm:col-span-2 md:col-span-2 lg:col-span-3">
        {imgurl && <Image height={540} width={960} src={imgurl} alt={alt} />}

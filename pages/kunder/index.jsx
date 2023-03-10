@@ -4,7 +4,6 @@ import Card from "../../components/modules/ComponentLayoutCard";
 import {
   getClientsPageContent,
   getGlobalContent,
-  getClientInfo,
 } from "../../lib/api";
 import { customColors } from "../../customdata";
 import Link from "next/link";
@@ -22,6 +21,8 @@ export default function clientsPage({
     Feed,
     clientGrid: {clients},
   } = pageContent;
+
+  console.log(clients);
 
   const components = Feed?.map((component) => {
     const ComponentType =

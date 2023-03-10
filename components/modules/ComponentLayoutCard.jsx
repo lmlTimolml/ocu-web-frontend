@@ -32,13 +32,13 @@ export default function Card({ client }) {
         style={{ backgroundColor: `${background[bgcolor]}` }}
       >
         {date && <p className="mb-4">{date}</p>}
-        {clientName && (
+        {clientName &&
           <h2 className="mb-2 text-2xl font-bold">{clientName}</h2>
-        )}
+        }
         {ingress && <p className="mb-4 line-clamp-6">{ingress}</p>}
 
-        {label && (
-          <div className="col-span-3 md:col-span-6 lg:col-start-3 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {label &&
+          <div>
             <Button
               label={label}
               txt={txt}
@@ -46,7 +46,7 @@ export default function Card({ client }) {
               style={style}
             />
           </div>
-        )} 
+        } 
       </div>
     </div>
   );

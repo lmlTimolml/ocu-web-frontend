@@ -26,11 +26,7 @@ export default function articlesPage({
     ingress,
     date,
     tags,
-    category,
-    img,
-    Feed,
-    button: {label,txt,link,style},
-    bgCard: {bgcolor}
+    Feed
   } = featuredArticle;
 
   const components = Feed?.map((component) => {
@@ -38,8 +34,6 @@ export default function articlesPage({
       require(`../../components/modules/${component.__typename}`).default;
     return <ComponentType key={component.id} {...component} />;
   });
-
-  console.log("Featured Article CSR", featuredArticle);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>

@@ -6397,6 +6397,13 @@ query InspirationPage {
                     }
                   }
                 }
+                category {
+                  data {
+                    attributes {
+                      category
+                    }
+                  }
+                }
               }
             }
           }

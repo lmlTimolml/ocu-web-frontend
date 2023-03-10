@@ -44,7 +44,7 @@ export default function inspirationPage({
       <div className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
          <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
           
-          {articles.data?.map((article, i) => {
+          {articles?.data?.map((article, i) => {
             return <ArticleCard key={i} article={article} />;
           })} 
 

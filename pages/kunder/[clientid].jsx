@@ -36,7 +36,7 @@ export default function clientsPage({
     return <ComponentType key={component.id} {...component} />;
   });
 
-  console.log("Featured client CSR", featuredClient);
+  console.log("Featured client CSR", bgcolor);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>

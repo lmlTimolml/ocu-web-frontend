@@ -14,7 +14,6 @@ const background = customColors();
 export default function clientsPage({
   pageContent,
   globalContent,
-  featuredClient,
 }) {
   const {
     pageTitle,
@@ -23,20 +22,6 @@ export default function clientsPage({
     Feed,
     clientGrid: {clients},
   } = pageContent;
-
-  const [featClient = {}] = featuredClient || [];
-const { logo,
-  date,
-  img,
-  clientName,
-  ingress,
-  slug,
-  url,
-  button,
-  bgCard } = { ...featClient };
-
-
-  console.log("Kunder", clients);
 
   const components = Feed?.map((component) => {
     const ComponentType =
@@ -58,7 +43,7 @@ const { logo,
          <div className="my-6 grid col-span-3 md:col-span-6 lg:col-span-8 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 lg:col-start-3 gap-4">
           
           {clients.data?.map((client, i) => {
-            return <Card key={i} client={client} featClient={featClient} />;
+            return <Card key={i} client={client} />;
           })} 
 
 
@@ -74,14 +59,11 @@ const { logo,
 export async function getStaticProps() {
   const pageContent = await getClientsPageContent(); // fetches query
   const globalContent = await getGlobalContent();
-  
-  const featuredClient = await getClientInfo();
 
   return {
     props: {
       pageContent: pageContent.clientPage.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
-      featuredClient: featuredClient.clients.data,
       
     },
     revalidate: 10,

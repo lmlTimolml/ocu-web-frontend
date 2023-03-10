@@ -4,7 +4,7 @@ import { customColors } from "../../customdata";
 
 const background = customColors();
 
-export default function Card({ client, featClient }) {
+export default function Card({ client }) {
   const Button = dynamic(() => import(`../buttons/${style}`), {
     ssr: false,
   });
@@ -19,9 +19,6 @@ export default function Card({ client, featClient }) {
     button: {label,txt,link,style},
     bgCard: {bgcolor}
   } = client.attributes;
-
-  console.log("Kundekort: client", alt);
-  console.log("Kundekort: featured", clientName);
 
   const imgurl = img.data.attributes.url;
 

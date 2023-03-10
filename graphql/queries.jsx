@@ -4443,6 +4443,9 @@ query clientPage {
                 bgCard {
                   bgcolor
                 }
+                bgIngress {
+                  bgcolor
+                }
                 clientName
                 button {
                   label

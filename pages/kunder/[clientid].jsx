@@ -23,11 +23,9 @@ export default function clientsPage({
 
   const {
     logo,
-    clientName,
     ingress,
-    slug,
     Feed,
-    bgCard: { bgcolor },
+    bgIngress: { bgcolor },
   } = featuredClient;
 
   const clientLogo = logo.data.attributes;

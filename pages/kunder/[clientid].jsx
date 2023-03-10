@@ -85,7 +85,7 @@ export async function getStaticProps({ params }) {
       globalContent: globalContent.global.data.attributes,
       featuredClient: featuredClient.attributes,
     },
-    revalidate: 10,
+    revalidate: 10
   };
 }
 

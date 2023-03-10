@@ -68,6 +68,6 @@ export async function getStaticProps() {
       globalContent: globalContent.global.data.attributes,
       
     },
-    revalidate: 10,
+    revalidate: 10
   };
 }

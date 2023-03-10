@@ -73,7 +73,7 @@ export async function getStaticProps({ params }) {
       globalContent: globalContent.global.data.attributes,
       featuredArticle: featuredArticle.attributes,
     },
-    revalidate: 10,
+    revalidate: 10
   };
 }
 

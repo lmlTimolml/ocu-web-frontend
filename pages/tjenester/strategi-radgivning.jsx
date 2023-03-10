@@ -68,6 +68,6 @@ export async function getStaticProps() {
       pageContent: pageContent.serviceSubPageOne.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
     },
-    revalidate: 10,
+    revalidate: 10
   };
 }

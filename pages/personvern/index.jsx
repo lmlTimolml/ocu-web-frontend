@@ -46,6 +46,6 @@ export async function getStaticProps() {
       pageContent: pageContent.personvern.data.attributes,
       globalContent: globalContent.global.data.attributes,
     },
-    revalidate: 10,
+    revalidate: 10
   };
 }

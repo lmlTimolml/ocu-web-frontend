@@ -1,51 +1,39 @@
 import Image from "next/image";
-import dynamic from "next/dynamic";
+import Icon from "../ui/icon";
 import { customColors } from "../../customdata";
 
 const background = customColors();
 
-export default function Card({ client }) {
-  const Button = dynamic(() => import(`../buttons/${style}`), {
-    ssr: false,
-  });
+export default function EmployeeCard({ employee }) {
 
   const {
-    clientName,
-    ingress,
-    date,
-    slug,
+    name,
+    title,
     img,
     alt,
-    button: {label,txt,link,style},
+    contact,
     bgCard: {bgcolor}
-  } = client.attributes;
+  } = employee.attributes;
 
-  const imgurl = img.data.attributes.url;
+  const imgurl = img.data[0].attributes.url;
+
+  console.log("Kundekort", contact);
 
   return (
-    <div className="col-span-3 sm:col-span-2 md:col-span-2 lg:col-span-3">
-       {imgurl && <Image height={540} width={960} src={imgurl} alt={alt} />}
+    <div className="flex flex-col h-full justify-between ease-linear duration-150" style={{ backgroundColor: `${background[bgcolor]}` }}>
+       {imgurl && <Image height={540} width={540} src={imgurl} alt={alt} />}
       <div
-        className="flex flex-col justify-start w-full p-6"
-        style={{ backgroundColor: `${background[bgcolor]}` }}
-      >
-        {date && <p className="mb-4">{date}</p>}
-        {clientName && (
-          <h2 className="mb-2 text-2xl font-bold">{clientName}</h2>
+        className="flex flex-col justify-start w-full p-3">
+        {name && (
+          <h2 className="font-bold">{name}</h2>
         )}
-        {ingress && <p className="mb-4 line-clamp-6">{ingress}</p>}
-
-        {label && (
-          <div className="col-span-3 md:col-span-6 lg:col-start-3 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <Button
-              label={label}
-              txt={txt}
-              link={`/kunder/${slug}`}
-              style={style}
-            />
-          </div>
-        )} 
+        {title && <p className="mb-4">{title}</p>}
       </div>
+<div className="flex pl-3">
+        {contact?.map((contact, i) => {
+            return <Icon key={i} contact={contact} />
+          })}
+          </div>
     </div>
   );
 }

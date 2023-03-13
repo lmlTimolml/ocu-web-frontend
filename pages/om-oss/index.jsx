@@ -1,30 +1,20 @@
-export default function aboutPage({ pageContent, globalContent }) {
-
-return null;
-}
-  /* import Link from "next/link";
-import Image from "next/image";
 import Layout from "../../components/layout/layout";
 import Hero from "../../components/layout/hero";
 import { getAboutPageContent, getGlobalContent } from "../../lib/api";
-import { customColors } from "../../customdata";
-
-const background = customColors();
 
 export default function aboutPage({ pageContent, globalContent }) {
   const {
     pageTitle,
     heroSection: { heroTitle, heroDescription, heroButton, heroImage, alt },
-    breadcrumbpath
+    breadcrumbpath,
+    Feed,
   } = pageContent;
 
   const components = Feed?.map((component) => {
     const ComponentType =
-    require(`../../components/modules/${component.__typename}`).default;
+      require(`../../components/modules/${component.__typename}`).default;
     return <ComponentType key={component.id} {...component} />;
   });
-
-  console.log("Page: Om oss", bgcolor);
 
   return (
     <Layout globalContent={globalContent} pageTitle={pageTitle}>
@@ -36,24 +26,26 @@ export default function aboutPage({ pageContent, globalContent }) {
         alt={alt}
         breadcrumbpath={breadcrumbpath}
       />
-      
-      {components?.map((components, i) => {
-        return <section key={i}>{components}</section>;
-      })}
+
+<article className="py-5">
+        {components?.map((components, i) => {
+          return <section key={i}>{components}</section>;
+        })}
+      </article>
 
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const pageContent = await getAboutPageContent(); // fetches query
+  const pageContent = await getAboutPageContent();
   const globalContent = await getGlobalContent();
 
   return {
     props: {
-      pageContent: pageContent.aboutPage.data.attributes, // creates a const from toplevel query and serves it as prop
+      pageContent: pageContent.about.data.attributes,
       globalContent: globalContent.global.data.attributes,
     },
-    revalidate: 10,
+    revalidate: 10
   };
-} */
+}

@@ -48,7 +48,8 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
           src={heroImage.data.attributes.url}
           alt={heroTitle}
         />
-        <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent z-[2]" />
+        <div className="absolute top-0 w-full h-[600px] bg-gradient-to-r from-black/80 to-transparent" />
+        
         <div
       className="mx-5 md:mx-10 lg:m-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]"
     >
@@ -57,6 +58,7 @@ export default function Hero({ heroTitle, heroDescription, heroImage, alt, bread
           <p className="py-5 text-lg sm:text-xl">{heroDescription}</p>
         </div>
         </div>
+        
       </header>
       <section className="bg-white mx-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4 max-w-[1440px]">
       <div className="col-span-12 lg:col-start-3">

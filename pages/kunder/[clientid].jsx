@@ -78,12 +78,12 @@ export async function getStaticProps({ params }) {
   );
 
   return {
+    revalidate: 10,
     props: {
       pageContent: pageContent.clientPage.data.attributes, // creates a const from toplevel query and serves it as prop
       globalContent: globalContent.global.data.attributes,
       featuredClient: featuredClient.attributes,
     },
-    revalidate: 10
   };
 }
 

@@ -63,10 +63,10 @@ export async function getStaticProps() {
   const globalContent = await getGlobalContent();
 
   return {
+    revalidate: 10,
     props: {
       pageContent: pageContent.homePage.data.attributes,
       globalContent: globalContent.global.data.attributes
     },
-    revalidate: 10
   };
 }

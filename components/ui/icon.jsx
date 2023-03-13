@@ -7,8 +7,6 @@ export default function Icon({contact}) {
         icon,
         link,
       } = contact;
-  
-    console.log("Ikon", link);
 
   return (
     <Link href={link} className="mr-2 hover:scale-105 ease-linear duration-150">

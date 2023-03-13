@@ -6,11 +6,6 @@ import { customColors } from "../../customdata";
 const background = customColors();
 
 export default function EmployeeGrid({img, alt, employees, bgColor: {bgcolor}}) {
-
-  console.log("Kundegrid", bgcolor);
-
-
-  /* const imgurl = img.data[0].attributes.url; */
   
   return (
     <section

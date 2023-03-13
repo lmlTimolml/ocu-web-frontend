@@ -17,8 +17,6 @@ export default function EmployeeCard({ employee }) {
 
   const imgurl = img.data[0].attributes.url;
 
-  console.log("Kundekort", contact);
-
   return (
     <div className="flex flex-col h-full justify-between ease-linear duration-150" style={{ backgroundColor: `${background[bgcolor]}` }}>
        {imgurl && <Image height={540} width={540} src={imgurl} alt={alt} />}
